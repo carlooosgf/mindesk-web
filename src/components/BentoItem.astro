@@ -1,0 +1,30 @@
+---
+// src/components/BentoItem.astro
+interface Props {
+    title: string;
+    description: string;
+    class?: string;
+}
+
+const { title, description, class: className } = Astro.props;
+---
+
+<div class={`group relative overflow-hidden rounded-[12px] border border-white/5 bg-brand-text-dark p-1 transition-all duration-500 hover:border-brand-accent/40 hover:shadow-[0_0_30px_rgba(183,136,244,0.1)] ${className}`}>
+    
+    <div class="absolute inset-0 z-0 bg-linear-to-br from-brand-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <div class="relative z-10 h-full w-full bg-[#15202e] rounded-[10px] p-8 flex flex-col justify-between">
+        <div>
+            <div class="w-10 h-10 mb-4 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:scale-110 group-hover:bg-brand-accent/10 group-hover:text-brand-accent transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-current"></div>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-brand-accent transition-colors">{title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{description}</p>
+        </div>
+        
+        <div class="mt-8 h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full w-1/4 bg-brand-primary group-hover:w-3/4 group-hover:bg-brand-accent transition-all duration-700 ease-out"></div>
+        </div>
+    </div>
+</div>

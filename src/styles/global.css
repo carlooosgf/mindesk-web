@@ -1,0 +1,98 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+/* 1. CONFIGURACIÓN DEL TEMA (Nativo v4) */
+/* Al definirlo aquí, se crean automáticamente las clases como bg-brand-bg, text-brand-primary, etc. */
+@theme {
+  /* Paleta de Colores "Calma Clínica" */
+  --color-brand-bg: #FDFCF8;
+  --color-brand-text: #132A28;
+  
+  --color-brand-primary: #0F766E;
+  --color-brand-primary-light: #CCFBF1;
+  
+  --color-brand-accent: #7C3AED;
+  --color-brand-accent-light: #F3E8FF;
+  
+  --color-brand-orange: #C2410C;
+  --color-brand-orange-light: #FFEDD5;
+
+  /* Tipografías */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  
+  /* Animaciones personalizadas */
+  --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-marquee: marquee 40s linear infinite;
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+/* 2. ESTILOS BASE */
+@layer base {
+  html {
+    /* Ahora usamos las variables CSS nativas que genera el @theme */
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply antialiased overflow-x-hidden;
+  }
+
+  /* Títulos H1-H6 con la fuente Serif */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* 3. UTILIDADES */
+@layer utilities {
+  /* Selección de texto elegante */
+  ::selection {
+    background-color: var(--color-brand-primary-light);
+    color: var(--color-brand-primary);
+  }
+
+  /* Gradiente de texto de marca */
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-brand-primary via-brand-accent to-brand-primary;
+  }
+}
+
+/* 4. SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E2E8F0;
+  border-radius: 20px;
+  border: 3px solid var(--color-brand-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-brand-primary);
+}
+
+/* 5. AJUSTES IMAGEN */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}

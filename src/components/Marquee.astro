@@ -1,0 +1,62 @@
+---
+// src/components/Marquee.astro
+// SOLUCIÓN: Duplicamos la lista de items para asegurar que sea más ancha que la pantalla (1920px+)
+const rawItems = [
+  { text: "Gestión Clínica"},
+  { text: "RGPD Seguro"},
+  { text: "Agenda Integrada" },
+  { text: "Sincronización Docs"},
+  { text: "Roles a Medida"},
+  { text: "Soporte 24/7"},
+  { text: "Informes Avanzados" },
+  { text: "Facturación Automática" },
+];
+
+// Concatenamos el array consigo mismo para tener el doble de longitud
+const items = [...rawItems, ...rawItems];
+---
+
+<div class="marquee-wrapper border-y border-brand-text/5 bg-white/50 backdrop-blur-sm py-4 relative flex overflow-hidden select-none">
+  
+  <div class="pointer-events-none absolute top-0 bottom-0 left-0 w-24 z-10 bg-linear-to-r from-brand-bg to-transparent"></div>
+  <div class="pointer-events-none absolute top-0 bottom-0 right-0 w-24 z-10 bg-linear-to-l from-brand-bg to-transparent"></div>
+
+  <div class="marquee-content flex items-center gap-16 shrink-0 pr-16">
+    {items.map((item) => (
+      <span class="flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-slate-400 font-sans">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary/40"></span>
+        {item.text}
+      </span>
+    ))}
+  </div>
+
+  <div class="marquee-content flex items-center gap-16 shrink-0 pr-16" aria-hidden="true">
+    {items.map((item) => (
+      <span class="flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-slate-400 font-sans">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary/40"></span>
+        {item.text}
+      </span>
+    ))}
+  </div>
+
+</div>
+
+<style>
+  .marquee-content {
+    /* He aumentado el tiempo a 60s porque ahora la lista es el doble de larga y si no iría muy rápido */
+    animation: scroll 80s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+  }
+</style>

@@ -1,0 +1,618 @@
+---
+// src/pages/index.astro
+import Layout from "@layouts/Layout.astro";
+import Marquee from "@components/Marquee.astro";
+import RoleSwitcher from "@components/RoleSwitcher.astro";
+const estiloTitulo =
+  "text-4xl md:text-6xl font-serif font-medium text-brand-text mb-6";
+---
+
+<Layout title="Mindesk | Gestión Clínica">
+  <section class="relative min-h-dvh w-full flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 pt-24 md:pt-20 xl:pt-[18vh] pb-12">
+  
+  <div class="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full">
+    </div>
+
+    <div
+      class="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full"
+    >
+      <div
+        class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-lg border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_0_25px_rgba(16,185,129,0.4)] mb-8"
+      >
+        <span class="ext-sm font-bold tracking-wide text-slate-800 px-2 py-1"
+          >Beta v.1.0 Disponible</span
+        >
+      </div>
+
+      <h1
+        class="text-6xl sm:text-7xl md:text-[6.5rem] font-sans font-extrabold leading-[1.05] tracking-tighter text-[#2D3748] mb-6"
+      >
+        Tu mente en <br class="hidden sm:block" />
+        <span class="text-[#10b981]"> el paciente </span>
+      </h1>
+
+      <p
+        class="text-xl md:text-2xl text-slate-800 max-w-2xl mx-auto mb-10 leading-snug font-sans font-medium tracking-tight"
+      >
+        Organiza tu gabinete, simplifica tu día. <br class="hidden sm:block" />
+        Un entorno seguro para potenciar tu práctica.
+      </p>
+
+      <div
+        class="flex flex-col sm:flex-row gap-5 w-full sm:w-auto mt-4 items-center font-sans"
+      >
+        <a
+          href="/contacto"
+          class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#10b981] text-white font-bold text-lg transition-all duration-300 shadow-[0_0_45px_rgba(16,185,129,0.5)] hover:shadow-[0_0_65px_rgba(16,185,129,0.7)] hover:-translate-y-1"
+        >
+          Quiero Participar
+        </a>
+
+        <a
+          href="/como-funciona"
+          class="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent text-slate-700 font-bold text-lg border-2 border-[#10b981] hover:bg-white hover:border-[#10b981] transition-all duration-300"
+        >
+          Ver cómo funciona
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-24 md:py-32 px-4 sm:px-6 w-full font-sans">
+  
+  <div class="relative z-10 max-w-6xl mx-auto">
+    
+    <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+      <h2 class="text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-[#2D3748] mb-6">
+        El coste oculto de tu caos.
+      </h2>
+      <p class="text-xl md:text-2xl text-slate-600 font-medium tracking-tight">
+        Identificamos los 3 ladrones de tiempo en tu consulta diaria.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+      <div class="group relative flex flex-col justify-between p-8 md:p-10 rounded-[2.5rem] bg-linear-to-br from-white/40 to-white/5 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_10px_40px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:-translate-y-1 transition-all duration-500 lg:row-span-2 overflow-hidden">
+        
+        <div class="flex flex-col h-full z-10">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="px-4 py-1.5 bg-white/60 shadow-sm border border-white/80 rounded-full text-sm font-bold tracking-wide text-[#10b981]">01</span>
+            <div class="group-hover:scale-110 transition-transform duration-500 shrink-0">
+              <img src="/icons/icono-docs.png" alt="Icono de documentos" class="w-10 h-10 object-contain drop-shadow-md"/>
+            </div>
+          </div>
+          <h3 class="text-3xl font-extrabold text-[#2D3748] mb-4 tracking-tight">Notas Dispersas</h3>
+          <p class="text-slate-700 text-lg leading-relaxed mb-10 font-medium">
+            La información de tus pacientes vive fragmentada: Word, Excel y post-its. Recuperar el hilo de una historia clínica se vuelve arqueología.
+          </p>
+
+          <div class="mt-auto w-full h-56 rounded-3xl relative overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 bg-white/20 border border-white/40 rounded-3xl backdrop-blur-sm transition-colors group-hover:bg-white/30"></div>
+            
+            <div class="absolute top-4 left-4 sm:top-6 sm:left-6 w-24 h-28 bg-blue-50/80 backdrop-blur-md border border-blue-200/60 rounded-2xl shadow-lg shadow-blue-500/5 -rotate-6 group-hover:-rotate-12 group-hover:-translate-x-3 group-hover:-translate-y-2 transition-all duration-500 p-4 flex flex-col gap-2.5 z-10">
+              <div class="w-1/2 h-2 bg-blue-300/60 rounded-full"></div>
+              <div class="w-full h-1.5 bg-blue-200/60 rounded-full"></div>
+              <div class="w-3/4 h-1.5 bg-blue-200/60 rounded-full"></div>
+              <div class="w-5/6 h-1.5 bg-blue-200/60 rounded-full"></div>
+            </div>
+
+            <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-28 h-24 bg-emerald-50/80 backdrop-blur-md border border-emerald-200/60 rounded-2xl shadow-lg shadow-emerald-500/5 rotate-6 group-hover:rotate-12 group-hover:translate-x-3 group-hover:translate-y-2 transition-all duration-500 p-3.5 grid grid-cols-3 gap-1.5 z-20">
+              <div class="h-2.5 bg-emerald-300/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-200/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-200/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-200/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-300/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-200/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-200/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-200/60 rounded-sm"></div>
+              <div class="h-2.5 bg-emerald-300/60 rounded-sm"></div>
+            </div>
+
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-amber-50/90 backdrop-blur-xl border border-amber-200/60 rounded-xl shadow-xl shadow-amber-500/10 rotate-3 group-hover:-rotate-3 group-hover:scale-110 transition-all duration-500 p-3 flex flex-col items-center justify-center z-30">
+              <div class="w-8 h-8 rounded-full border-[3px] border-amber-200 border-t-amber-400 animate-spin"></div>
+              <span class="text-[9px] font-bold text-amber-600 mt-3 tracking-widest uppercase">Buscando</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative flex flex-col sm:flex-row items-center gap-8 p-8 rounded-4xl bg-linear-to-br from-white/40 to-white/5 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_10px_40px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+        
+        <div class="flex-1 z-10">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="px-4 py-1.5 bg-white/60 shadow-sm border border-white/80 rounded-full text-sm font-bold tracking-wide text-[#10b981]">02</span>
+            <div class="group-hover:scale-110 transition-transform duration-500 shrink-0">
+              <img src="/icons/icono-reloj.png" alt="Icono de reloj" class="w-8 h-8 object-contain drop-shadow-md"/>
+            </div>
+          </div>
+          <h3 class="text-2xl font-extrabold text-[#2D3748] mb-3 tracking-tight">Preparación Lenta</h3>
+          <p class="text-slate-700 leading-relaxed font-medium">
+            Esos 10 min perdidos buscando "dónde nos quedamos" te roban horas a la semana.
+          </p>
+        </div>
+
+        <div class="w-full sm:w-48 h-32 bg-white/80 border border-white rounded-3xl shadow-lg shadow-slate-200/50 -rotate-1 group-hover:-rotate-2 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center shrink-0 relative overflow-hidden backdrop-blur-sm">
+          <div class="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="text-center relative z-10">
+            <div class="text-4xl font-mono font-bold text-slate-800 mb-1 tracking-tighter">10<span class="text-2xl text-slate-400">:00</span></div>
+            <div class="text-[10px] font-bold uppercase tracking-widest text-orange-500 bg-orange-50 px-2 py-1 rounded-full inline-block">Tiempo perdido</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative flex flex-col sm:flex-row items-center gap-8 p-8 rounded-4xl bg-linear-to-br from-white/40 to-white/5 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_10px_40px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+        
+        <div class="flex-1 z-10">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="px-4 py-1.5 bg-white/60 shadow-sm border border-white/80 rounded-full text-sm font-bold tracking-wide text-[#10b981]">03</span>
+            <div class="group-hover:scale-110 transition-transform duration-500 shrink-0">
+              <img src="/icons/icono-legal.png" alt="Icono de legal" class="w-8 h-8 object-contain drop-shadow-md"/>
+            </div>
+          </div>
+          <h3 class="text-2xl font-extrabold text-[#2D3748] mb-3 tracking-tight">Riesgo Legal</h3>
+          <p class="text-slate-700 leading-relaxed font-medium">
+            ¿Cumples el RGPD? Guardar datos sensibles en Excel sin encriptar es un peligro.
+          </p>
+        </div>
+
+        <div class="w-full sm:w-48 h-32 bg-[#0A192F] border border-slate-700 rounded-3xl shadow-xl rotate-1 group-hover:rotate-2 group-hover:scale-105 transition-transform duration-500 relative flex items-center justify-center shrink-0 overflow-hidden">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-[#10b981]/30 blur-xl"></div>
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="w-10 h-10 border-[3px] border-slate-600 rounded-full border-t-[#10b981] animate-spin mb-3"></div>
+            <div class="text-[10px] font-mono font-bold text-[#10b981] tracking-widest bg-[#10b981]/10 px-3 py-1 rounded-full border border-[#10b981]/20">ENCRIPTANDO</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <div id="demo">
+    <RoleSwitcher />
+  </div>
+
+  <section class="max-w-7xl mx-auto px-6 py-12 md:py-32">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class={estiloTitulo}>El final del caos.</h2>
+      <p class="text-lg text-slate-600">
+        Una estructura sólida que organiza tu gabinete de principio a fin.
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 border-t border-l border-slate-200"
+    >
+      <div
+        class="group border-r border-b border-slate-200 p-12 hover:bg-white transition-colors duration-500 relative bg-brand-bg"
+      >
+        <div class="flex items-center gap-6 mb-6">
+          <div
+            class="group-hover:scale-110 transition-transform duration-500 shrink-0 mb-5"
+          >
+            <img
+              src="/icons/icono-sincDocs.png"
+              alt="Icono de sincronización de documentos"
+              class="w-14 h-14 object-contain"
+            />
+          </div>
+
+          <h3
+            class="text-3xl font-serif font-medium text-brand-text group-hover:decoration-brand-primary/30 transition-colors leading-tight"
+          >
+            Del Paciente a la Sesión
+          </h3>
+        </div>
+
+        <p class="text-slate-600 font-sans leading-relaxed text-lg mb-2">
+          Conectamos tu agenda con la historia clínica. Al finalizar una cita,
+          el sistema genera <span class="text-brand-text font-bold"
+            >automáticamente</span
+          >
+          el borrador. Olvídate de hacer memoria.
+        </p>
+      </div>
+
+      <div
+        class="group border-r border-b border-slate-200 p-12 hover:bg-white transition-colors duration-500 relative bg-brand-bg"
+      >
+        <div class="flex items-center gap-6 mb-6">
+          <div
+            class="group-hover:scale-110 transition-transform duration-500 shrink-0"
+          >
+            <img
+              src="/icons/icono-carpeta.png"
+              alt="Icono de carpeta"
+              class="w-14 h-14 object-contain"
+            />
+          </div>
+
+          <h3
+            class="text-3xl font-serif font-medium text-brand-text group-hover:text-brand-accent transition-colors leading-tight"
+          >
+            Privacidad y Recursos
+          </h3>
+        </div>
+
+        <p class="text-slate-600 font-sans leading-relaxed text-lg">
+          Tu nube tiene dos niveles. Sube archivos a tu <span
+            class="font-bold text-brand-accent">Zona Privada</span
+          > o colabora en la <span class="font-bold text-brand-accent"
+            >Biblioteca</span
+          >, un repositorio vivo donde todo el equipo aporta y descarga recursos
+          comunes.
+        </p>
+      </div>
+
+      <div
+        class="group border-r border-b border-slate-200 p-12 hover:bg-white transition-colors duration-500 relative bg-brand-bg"
+      >
+        <div class="flex items-center gap-6 mb-6">
+          <div
+            class="group-hover:scale-110 transition-transform duration-500 shrink-0"
+          >
+            <img
+              src="/icons/icono-equipo.png"
+              alt="Icono de gestión de equipo"
+              class="w-14 h-14 object-contain"
+            />
+          </div>
+
+          <h3
+            class="text-3xl font-serif font-medium text-brand-text group-hover:text-brand-orange transition-colors leading-tight"
+          >
+            Gestión de Equipo
+          </h3>
+        </div>
+
+        <p class="text-slate-600 font-sans leading-relaxed text-lg">
+          Cada profesional ve solo lo que necesita. Configura perfiles de <span
+            class="font-bold text-brand-orange">Gerentes</span
+          > (visión global de facturación) o <span
+            class="font-bold text-brand-orange">Profesionales</span
+          > (foco exclusivo en sus pacientes). Sin riesgos de privacidad.
+        </p>
+      </div>
+
+      <div
+        class="group border-r border-b border-slate-200 p-12 hover:bg-white transition-colors duration-500 relative bg-brand-bg"
+      >
+        <div class="flex items-center gap-6 mb-6">
+          <div
+            class="group-hover:scale-110 transition-transform duration-500 shrink-0"
+          >
+            <img
+              src="/icons/icono-candado.png"
+              alt="Icono de candado"
+              class="w-14 h-14 object-contain"
+            />
+          </div>
+
+          <h3
+            class="text-3xl font-serif font-medium text-brand-text group-hover:text-emerald-600 transition-colors leading-tight"
+          >
+            Tranquilidad Legal
+          </h3>
+        </div>
+
+        <p class="text-slate-600 font-sans leading-relaxed text-lg">
+          Cumplimiento del RGPD nativo. Custodia los documentos sensibles de tus
+          pacientes en un entorno con la seguridad de la <span
+            class="font-bold text-emerald-600">encriptación</span
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-32 px-6 bg-white relative overflow-hidden">
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class={estiloTitulo}>Tu acceso anticipado.</h2>
+        <p class="text-lg text-slate-600">
+          Únete ahora para moldear el futuro de la herramienta.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div
+          class="p-10 rounded-4xl border border-slate-200 bg-brand-bg/50 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+        >
+          <h3 class="text-2xl font-serif text-brand-text mb-2">
+            Lanzamiento Oficial
+          </h3>
+          <p class="text-slate-500 text-sm mb-8 font-sans">
+            Precio estimado plan estándar post-beta
+          </p>
+
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-bold text-slate-400 font-sans">29€</span>
+            <span class="text-slate-400 font-sans">/mes</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 text-slate-500 font-sans text-sm">
+            <li class="flex gap-3 items-center">
+              <span class="text-slate-400">✓</span> Gestión de pacientes ilimitada
+            </li>
+            <li class="flex gap-3 items-center">
+              <span class="text-slate-400">✓</span> Agenda inteligente
+            </li>
+            <li class="flex gap-3 items-center">
+              <span class="text-slate-400">✓</span> Soporte estándar
+            </li>
+          </ul>
+
+          <button
+            class="w-full py-4 rounded-2xl border border-slate-200 text-slate-400 font-bold font-sans cursor-not-allowed text-sm uppercase tracking-widest"
+            disabled
+          >
+            Próximamente
+          </button>
+        </div>
+
+        <div
+          class="relative p-12 rounded-4xl bg-brand-text text-white shadow-2xl shadow-brand-text/20 scale-105 transform"
+        >
+          <div
+            class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg border-4 border-white font-sans"
+          >
+            Plazas Limitadas
+          </div>
+
+          <h3 class="text-3xl font-serif text-white mb-2">Beta Tester</h3>
+          <p class="text-slate-400 text-sm mb-8 font-sans">
+            Ayúdanos a mejorar y obtén grandes ventajas
+          </p>
+
+          <div class="flex items-baseline gap-2 mb-8">
+            <span class="text-6xl font-bold text-white font-serif">0€</span>
+          </div>
+
+          <ul class="space-y-4 mb-10 text-slate-300 font-sans">
+            <li class="flex gap-3 items-center">
+              <span class="text-brand-primary">✓</span> Acceso completo a todas las
+              funciones
+            </li>
+            <li class="flex gap-3 items-center">
+              <span class="text-brand-primary">✓</span> Prioridad en nuevas características
+            </li>
+            <li class="flex gap-3 items-center">
+              <span class="text-brand-primary">✓</span> Línea directa con los fundadores
+            </li>
+            <li
+              class="flex gap-3 items-center text-sm text-slate-400 italic border-t border-white/10 pt-4 mt-2"
+            >
+              *Descuento del 30% vitalicio al lanzar
+            </li>
+          </ul>
+
+          <a
+            href="/contacto"
+            class="block w-full py-5 rounded-2xl bg-white text-brand-text hover:bg-brand-primary hover:text-white font-bold text-center transition-all shadow-lg text-sm uppercase tracking-widest font-sans"
+          >
+            Solicitar Acceso Beta
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 bg-brand-bg border-t border-slate-200">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class={estiloTitulo}>
+          ¿Tienes dudas? <br /> Nosotros resolvemos.
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <details
+          class="group [&_summary::-webkit-details-marker]:hidden bg-white border border-slate-100 rounded-2xl overflow-hidden open:shadow-md transition-shadow"
+        >
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-brand-text hover:text-brand-primary transition-colors"
+          >
+            <h3 class="text-lg font-bold font-sans">
+              ¿Tengo que introducir datos de mis pacientes?
+            </h3>
+            <span
+              class="shrink-0 rounded-full bg-brand-bg p-1.5 text-brand-text sm:p-3 group-open:bg-brand-primary group-open:text-white transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p
+              class="leading-relaxed text-slate-600 font-sans border-t border-slate-100 pt-4"
+            >
+              Mejor que no. <br /> Queremos que explores la herramienta con total
+              libertad y cero riesgos. <br /> Durante esta fase Beta, usarás datos
+              ficticios (nombres inventados o iniciales). Así podrás <strong>
+                probar todas las funciones</strong
+              >, simular sesiones y "trastear" con la plataforma sin miedo a
+              cometer errores y sin comprometer la confidencialidad real de tu
+              consulta. La migración de los datos reales la haremos juntos y con
+              garantías cuando lancemos la versión final.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group [&_summary::-webkit-details-marker]:hidden bg-white border border-slate-100 rounded-2xl overflow-hidden open:shadow-md transition-shadow"
+        >
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-brand-text hover:text-brand-primary transition-colors"
+          >
+            <h3 class="text-lg font-bold font-sans">
+              ¿Por qué dedicar tiempo a una Beta si no puedo llevar mi consulta
+              real?
+            </h3>
+            <span
+              class="shrink-0 rounded-full bg-brand-bg p-1.5 text-brand-text sm:p-3 group-open:bg-brand-primary group-open:text-white transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p
+              class="leading-relaxed text-slate-600 font-sans border-t border-slate-100 pt-4"
+            >
+              Porque es la única oportunidad de que el software se adapte a ti,
+              y no al revés. Tu feedback durante esta fase Beta definirá nuestra
+              hoja de ruta. Básicamente, estás invirtiendo tiempo en <strong
+                >moldear la herramienta perfecta</strong
+              >
+              que usarás el resto de tu carrera, asegurándote de que, cuando sea oficial,
+              cubra exactamente tus necesidades.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group [&_summary::-webkit-details-marker]:hidden bg-white border border-slate-100 rounded-2xl overflow-hidden open:shadow-md transition-shadow"
+        >
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-brand-text hover:text-brand-primary transition-colors"
+          >
+            <h3 class="text-lg font-bold font-sans">¿Es difícil de usar?</h3>
+            <span
+              class="shrink-0 rounded-full bg-brand-bg p-1.5 text-brand-text sm:p-3 group-open:bg-brand-primary group-open:text-white transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p
+              class="leading-relaxed text-slate-600 font-sans border-t border-slate-100 pt-4"
+            >
+              Mindesk nace precisamente porque el software actual suele ser
+              hostil. Nuestra obsesión ha sido la "limpieza visual". La mayoría
+              de programas te abruman mostrando 50 opciones que no necesitas.
+              Nosotros hemos eliminado ese ruido. La interfaz es predecible: los
+              botones están donde tu intuición te dice que deberían estar. Y si
+              alguna vez tienes una duda, no te mandamos a leer un manual:
+              tienes <strong>soporte directo</strong> con nuestro equipo.
+            </p>
+          </div>
+        </details>
+        <details
+          class="group [&_summary::-webkit-details-marker]:hidden bg-white border border-slate-100 rounded-2xl overflow-hidden open:shadow-md transition-shadow"
+        >
+          <summary
+            class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-brand-text hover:text-brand-primary transition-colors"
+          >
+            <h3 class="text-lg font-bold font-sans">
+              ¿Tengo que instalar algo en el ordenador de la consulta?
+            </h3>
+            <span
+              class="shrink-0 rounded-full bg-brand-bg p-1.5 text-brand-text sm:p-3 group-open:bg-brand-primary group-open:text-white transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p
+              class="leading-relaxed text-slate-600 font-sans border-t border-slate-100 pt-4"
+            >
+              Nada en absoluto. Mindesk vive en la nube, igual que tu correo o
+              tu banco. Esto significa que no dependes de un ordenador concreto.
+              Puedes empezar a escribir una sesión en el PC de la consulta y
+              terminarla cómodamente en tu iPad desde casa. <strong
+                >Tus datos viajan contigo</strong
+              >, no con el dispositivo. Si se te rompe el ordenador, no pierdes
+              nada: simplemente entras desde otro y sigues trabajando.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-32 px-6 bg-brand-bg relative z-10">
+    <div class="max-w-5xl mx-auto">
+      <div
+        class="relative bg-white border border-emerald-100 rounded-[2.5rem] overflow-hidden px-6 py-16 sm:px-16 sm:py-20 text-center shadow-2xl shadow-emerald-900/10"
+      >
+        <div
+          class="absolute top-0 inset-x-0 h-40 bg-linear-to-b from-emerald-50/50 to-transparent pointer-events-none"
+        >
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto space-y-8">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-medium text-brand-text leading-tight"
+          >
+            No te adaptes al software. <br />
+            <span class="text-brand-primary"
+              >Que el software se adapte a ti.</span
+            >
+          </h2>
+
+          <p
+            class="text-lg md:text-xl text-slate-600 font-sans leading-relaxed"
+          >
+            Únete a la Beta Exclusiva y ayúdanos a definir las funciones del
+            futuro. Sin coste, sin compromiso y con línea directa con el equipo.
+          </p>
+
+          <div class="pt-4 flex flex-col items-center gap-4">
+            <a
+              href="/contacto"
+              class="inline-flex items-center justify-center bg-brand-primary hover:bg-brand-primary/90 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-lg shadow-brand-primary/30 hover:scale-105 hover:shadow-brand-primary/50"
+            >
+              Solicitar Acceso
+            </a>
+
+            <p
+              class="text-sm text-slate-500 font-sans flex items-center gap-2 bg-slate-50 px-3 py-1 rounded-full border border-slate-100"
+            >
+              Pocas plazas disponibles
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

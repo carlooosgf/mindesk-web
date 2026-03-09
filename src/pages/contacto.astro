@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contacto y Admisiones | Mindesk">
+    
+    <section class="min-h-[calc(100vh-80px)] bg-brand-bg flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-125 h-125 bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start relative z-10">
+            
+            <div class="space-y-8 pt-0 lg:pt-12">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-serif font-medium text-brand-text leading-tight mb-6">
+                        Solicitud de <br/>
+                        <span class="text-brand-primary">Información.</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 leading-relaxed text-justify">
+                        El acceso a la plataforma Mindesk se encuentra actualmente restringido bajo invitación. Para garantizar los estándares de seguridad, realizamos un <strong>proceso de validación presencial</strong>.
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed mt-4 text-justify">
+                        Si representa a un gabinete clínico en <strong>Dos Hermanas</strong> y desea incorporar su centro a la fase Beta, complete el formulario oficial.
+                    </p>
+                </div>                
+            </div>
+
+            <div class="bg-white rounded-sm p-8 md:p-12 shadow-2xl shadow-slate-200/50 border border-slate-100 relative">
+                <div class="absolute top-0 left-0 w-full h-1 bg-brand-primary"></div>                
+                <form id="contact-form" action="https://formspree.io/f/xaqdwwpw" method="POST" class="space-y-6">
+                    
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <div>
+                        <label for="nombre" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nombre del Responsable <span class="text-red-500">*</span></label>
+                        <input type="text" name="nombre" id="nombre" required 
+                            class="w-full rounded-md border-slate-300 bg-white px-4 py-3 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm outline-none transition-all placeholder:text-slate-300"
+                            placeholder="Nombre y Apellidos"
+                        />
+                    </div>
+
+                    <div>
+                        <label for="gabinete" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nombre del Centro <span class="text-red-500">*</span></label>
+                        <input type="text" name="gabinete" id="gabinete" required 
+                            class="w-full rounded-md border-slate-300 bg-white px-4 py-3 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm outline-none transition-all placeholder:text-slate-300"
+                            placeholder="Ej. Clínica García"
+                        />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="especialidad" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Especialidad <span class="text-red-500">*</span></label>
+                            <select name="especialidad" id="especialidad" required class="w-full rounded-md border-slate-300 bg-white px-4 py-3 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm outline-none transition-all text-slate-700">
+                                <option value="" disabled selected>Seleccionar...</option>
+                                <option value="psicologia">Psicología</option>
+                                <option value="logopedia">Logopedia</option>
+                                <option value="pedagogia">Pedagogía</option>
+                                <option value="multidisciplinar">Multidisciplinar</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="telefono" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Teléfono <span class="text-red-500">*</span></label>
+                            <input type="tel" name="telefono" id="telefono" required 
+                                class="w-full rounded-md border-slate-300 bg-white px-4 py-3 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm outline-none transition-all placeholder:text-slate-300"
+                                placeholder="600 000 000"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-md border border-slate-100 flex items-start gap-3 mt-2">
+                        <div class="flex h-5 items-center">
+                            <input id="local" name="local" type="checkbox" value="Sí, confirmado" required class="h-4 w-4 rounded border-slate-300 text-brand-primary focus:ring-brand-primary cursor-pointer">
+                        </div>
+                        <div class="text-sm leading-tight">
+                            <label for="local" class="text-slate-600 cursor-pointer">
+                                Dispongo de centro o consulta en Dos Hermanas (Sevilla).
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button id="submit-btn" type="submit" class="w-full flex justify-center py-4 px-8 bg-brand-text text-white font-medium text-sm uppercase tracking-widest hover:bg-brand-primary transition-colors duration-300 shadow-lg shadow-brand-text/10 rounded-md">
+                            Solicitar Llamada
+                        </button>
+                    </div>
+
+                    <p id="form-status" class="hidden text-brand-primary text-sm text-center mt-2 font-medium"></p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById('contact-form') as HTMLFormElement | null;
+        const status = document.getElementById('form-status') as HTMLElement | null;
+        const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+        if (form && status && submitBtn) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const originalText = submitBtn.innerText;
+                submitBtn.innerText = "Enviando...";
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+                const data = new FormData(form);
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        window.location.href = '/mensaje-enviado';
+                    } else {
+                        const data = await response.json();
+                        if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
+                             // @ts-ignore
+                            status.innerText = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerText = "Hubo un problema. Inténtalo de nuevo.";
+                        }
+                        status.classList.remove('hidden');
+                        status.classList.add('text-red-500');
+                        resetBtn();
+                    }
+                } catch (error) {
+                    status.innerText = "Error de conexión. Verifica tu internet.";
+                    status.classList.remove('hidden');
+                    status.classList.add('text-red-500');
+                    resetBtn();
+                }
+
+                function resetBtn() {
+                    if (submitBtn) {
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    }
+                }
+            });
+        }
+    </script>
+
+</Layout>

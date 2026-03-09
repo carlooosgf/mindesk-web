@@ -1,0 +1,21 @@
+---
+// src/components/FeatureCard.astro
+import type { Feature } from '@interfaces/Feature';
+
+interface Props {
+    feature: Feature;
+}
+
+const { feature } = Astro.props;
+---
+
+<div class="group relative p-8 rounded-3xl border border-white/20 bg-white/40 backdrop-blur-md hover:bg-white/60 transition-all duration-500 shadow-xl hover:-translate-y-2">
+    <div class={`absolute inset-0 opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity bg-linear-to-br ${feature.gradient}`}></div>
+    
+    <div class={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6 bg-linear-to-br ${feature.gradient} text-white text-2xl shadow-lg`}>
+        {feature.icon}
+    </div>
+    
+    <h3 class="text-2xl font-bold mb-3 text-slate-800">{feature.title}</h3>
+    <p class="text-slate-600 leading-relaxed">{feature.description}</p>
+</div>
