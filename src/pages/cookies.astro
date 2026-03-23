@@ -3,44 +3,105 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Política de Cookies | Mindesk">
-    <section class="py-20 px-6 bg-white">
-        <div class="max-w-3xl mx-auto space-y-8">
+    
+    <section class="relative min-h-[calc(100vh-80px)] py-20 px-4 sm:px-6 flex items-center justify-center font-sans overflow-hidden z-10">
+        
+        <div class="absolute top-10 left-10 w-96 h-96 bg-[#10b981]/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="relative w-full max-w-4xl bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_50px_rgba(0,0,0,0.05)] border border-white/80 z-10">
             
-            <div class="border-b border-slate-200 pb-8 mb-8">
-                <h1 class="text-3xl md:text-4xl font-serif font-medium text-brand-text mb-4">Política de Cookies</h1>
-                <p class="text-slate-500">Última actualización: Febrero 2026</p>
+            <div class="border-b border-slate-200/60 pb-8 mb-10 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-wide uppercase mb-4 w-max border border-[#10b981]/20">
+                    Documento Legal
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2D3748] tracking-tight mb-4">Política de Cookies.</h1>
+                <p class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest">Última actualización: Marzo 2026</p>
             </div>
 
-            <div class="space-y-6 text-slate-700 leading-relaxed text-justify">
+            <div class="space-y-10 text-slate-600 font-medium leading-relaxed">
                 
-                <h2 class="text-xl font-bold text-brand-text mt-8">¿Qué son las cookies?</h2>
-                <p>
-                    Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.
-                </p>
+                <section>
+                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
+                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">1</span> 
+                        ¿Qué son las cookies?
+                    </h2>
+                    <p>
+                        Una cookie es un pequeño archivo de texto que un sitio web guarda en tu ordenador o dispositivo móvil cuando lo visitas. Las cookies son ampliamente utilizadas para que los sitios web funcionen, o funcionen de manera más eficiente, así como para proporcionar información analítica a los propietarios del sitio.
+                    </p>
+                </section>
 
-                <h2 class="text-xl font-bold text-brand-text mt-8">Tipos de cookies en esta web</h2>
-                <p>Esta página web utiliza los siguientes tipos de cookies:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>
-                        <strong>Cookies técnicas:</strong> Son aquellas necesarias para la navegación y el buen funcionamiento de nuestra página web (por ejemplo, para controlar el tráfico y la comunicación de datos).
-                    </li>
-                    <li>
-                        <strong>Cookies de análisis (Google Analytics u otros):</strong> Son aquellas que nos permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio.
-                    </li>
-                </ul>
+                <section>
+                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
+                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">2</span> 
+                        ¿Qué tipos de cookies utiliza Mindesk?
+                    </h2>
+                    <p class="mb-4">Nuestra página web (en su fase Beta) utiliza un número muy reducido de cookies, divididas en las siguientes categorías:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white/60 backdrop-blur-sm p-5 rounded-2xl border border-white shadow-sm">
+                            <h3 class="font-bold text-[#2D3748] mb-1">A. Cookies Técnicas y Necesarias (Propias)</h3>
+                            <p class="text-sm mb-2">Son aquellas estrictamente necesarias para el funcionamiento de la web. No recogen datos personales.</p>
+                            <ul class="text-sm space-y-1 text-slate-500">
+                                <li><strong>Nombre:</strong> <code class="bg-slate-100 px-1 rounded">mindesk_cookie_consent</code></li>
+                                <li><strong>Finalidad:</strong> Recordar si has aceptado o rechazado el banner de cookies para no volver a mostrártelo cada vez que cambias de página.</li>
+                                <li><strong>Duración:</strong> Persistente (se elimina si borras la caché de tu navegador).</li>
+                            </ul>
+                        </div>
 
-                <h2 class="text-xl font-bold text-brand-text mt-8">Cómo desactivar las cookies</h2>
-                <p>
-                    Puede usted permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador. A continuación le ofrecemos enlaces con la información necesaria para cada navegador:
-                </p>
-                <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600 mt-4">
-                    <li><a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank" class="hover:text-brand-primary underline">Google Chrome</a></li>
-                    <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" class="hover:text-brand-primary underline">Mozilla Firefox</a></li>
-                    <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" class="hover:text-brand-primary underline">Safari</a></li>
-                    <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" class="hover:text-brand-primary underline">Microsoft Edge</a></li>
-                </ul>
+                        <div class="bg-indigo-50/50 p-5 rounded-2xl border border-indigo-100/50">
+                            <h3 class="font-bold text-indigo-900 mb-1">B. Cookies Analíticas (De Terceros)</h3>
+                            <p class="text-sm text-indigo-800/80 mb-2">Solo se instalan en tu navegador <strong>si pulsas el botón "Aceptar"</strong> en el banner inicial. Nos ayudan a medir el tráfico de la web de forma anónima.</p>
+                            <ul class="text-sm space-y-1 text-indigo-800/70">
+                                <li><strong>Proveedor:</strong> Google Analytics (Google LLC).</li>
+                                <li><strong>Nombres comunes:</strong> <code class="bg-indigo-100 px-1 rounded">_ga</code>, <code class="bg-indigo-100 px-1 rounded">_ga_[ID]</code></li>
+                                <li><strong>Finalidad:</strong> Calcular datos de visitantes, sesiones y campañas; y hacer seguimiento del uso del sitio para el informe de análisis de la web.</li>
+                                <li><strong>Duración:</strong> Hasta 2 años.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
+                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">3</span> 
+                        Transferencias Internacionales
+                    </h2>
+                    <p>
+                        Al utilizar Google Analytics, la información que generan las cookies sobre tu uso del sitio web es directamente transmitida y archivada por Google en servidores ubicados en Estados Unidos. Google garantiza medidas de seguridad y acuerdos de confidencialidad estandarizados (Cláusulas Contractuales Tipo) para procesar estos datos.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
+                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">4</span> 
+                        ¿Cómo gestionar o eliminar las cookies?
+                    </h2>
+                    <p class="mb-4">
+                        Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de las opciones de tu navegador de internet. A continuación, te facilitamos los enlaces de los principales navegadores:
+                    </p>
+                    <ul class="space-y-2 pl-2">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                            <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="text-[#10b981] hover:underline font-bold">Google Chrome</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                            <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" class="text-[#10b981] hover:underline font-bold">Mozilla Firefox</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                            <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="text-[#10b981] hover:underline font-bold">Safari</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                            <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" class="text-[#10b981] hover:underline font-bold">Microsoft Edge</a>
+                        </li>
+                    </ul>
+                </section>
 
             </div>
         </div>
     </section>
+
 </Layout>
