@@ -1,0 +1,106 @@
+---
+
+---
+
+<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:bottom-8 md:left-auto md:right-8 md:w-105 z-100 hidden opacity-0 translate-y-8 transition-all duration-700 ease-out font-sans">
+    
+    <div class="relative bg-white/80 backdrop-blur-2xl border border-white/80 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.9)]">
+        
+        <div class="flex items-start gap-4 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center shrink-0">
+                <span class="text-xl">🍪</span>
+            </div>
+            <div>
+                <h3 class="text-base font-extrabold text-[#2D3748] tracking-tight leading-tight">Valoramos tu privacidad</h3>
+                <p class="text-xs text-slate-500 font-medium mt-1 leading-relaxed">
+                    Usamos cookies analíticas (Google Analytics) para entender cómo navegas y mejorar Mindesk. No las usamos para publicidad.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-3 mt-2">
+            <button id="reject-cookies" class="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-xs uppercase tracking-widest transition-colors">
+                Rechazar
+            </button>
+            <button id="accept-cookies" class="flex-1 py-2.5 rounded-xl bg-[#10b981] hover:bg-[#0ea572] text-white font-bold text-xs uppercase tracking-widest shadow-md shadow-[#10b981]/20 transition-colors">
+                Aceptar
+            </button>
+        </div>
+        
+    </div>
+</div>
+
+<script is:inline>
+// TU CÓDIGO DE GOOGLE ANALYTICS AQUÍ
+const GA_MEASUREMENT_ID = 'G-TQYHTVF705'; 
+
+function loadGoogleAnalytics() {
+    // Si ya está cargado, no hacemos nada
+    if (document.getElementById('ga-script')) return;
+
+    // 1. Inyectar el script principal de Google
+    const script1 = document.createElement('script');
+    script1.id = 'ga-script';
+    script1.async = true;
+    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script1);
+
+    // 2. Inicializar la configuración de gtag
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_MEASUREMENT_ID}');
+    `;
+    document.head.appendChild(script2);
+}
+
+function initCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    if (!banner || !acceptBtn || !rejectBtn) return;
+
+    // Comprobar si ya hay una preferencia guardada en el navegador del usuario
+    const consent = localStorage.getItem('mindesk_cookie_consent');
+
+    if (consent === 'accepted') {
+        // Si ya aceptó en el pasado, cargamos GA directamente en silencio
+        loadGoogleAnalytics();
+    } else if (!consent) {
+        // Si no hay preferencia, mostramos el banner con una animación suave
+        banner.classList.remove('hidden');
+        setTimeout(() => {
+            banner.classList.remove('opacity-0', 'translate-y-8');
+            banner.classList.add('opacity-100', 'translate-y-0');
+        }, 100);
+    }
+
+    // Acción de Aceptar
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('mindesk_cookie_consent', 'accepted');
+        loadGoogleAnalytics();
+        hideBanner();
+    });
+
+    // Acción de Rechazar
+    rejectBtn.addEventListener('click', () => {
+        localStorage.setItem('mindesk_cookie_consent', 'rejected');
+        hideBanner();
+    });
+
+    function hideBanner() {
+        banner.classList.remove('opacity-100', 'translate-y-0');
+        banner.classList.add('opacity-0', 'translate-y-8');
+        setTimeout(() => {
+            banner.classList.add('hidden');
+        }, 700);
+    }
+}
+
+// Ejecutar al cargar la página y al navegar (para que funcione con View Transitions de Astro)
+document.addEventListener('astro:page-load', initCookieBanner);
+document.addEventListener('DOMContentLoaded', initCookieBanner);
+</script>

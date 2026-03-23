@@ -1,179 +1,786 @@
 ---
+
 ---
+
+<style>
+  /* ── Liquid glass toggle ── */
+  #roleToggle {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.04),
+      0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  #toggleBg {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 2px 12px rgba(0, 0, 0, 0.08),
+      0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  /* ── Tint overlay de la sección ── */
+  #tintOverlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: background 0.9s ease;
+    border-radius: inherit;
+    z-index: 0;
+  }
+  #tintOverlay.tint-manager {
+    background: radial-gradient(
+      ellipse at 80% 10%,
+      rgba(16, 185, 129, 0.07) 0%,
+      transparent 60%
+    );
+  }
+  #tintOverlay.tint-pro {
+    background: radial-gradient(
+      ellipse at 80% 10%,
+      rgba(183, 136, 244, 0.08) 0%,
+      transparent 60%
+    );
+  }
+
+  /* ── Avatar dot ── */
+  .avatar-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .avatar-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 13px;
+    height: 13px;
+    background: #10b981;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  /* ── Progress bar animación ── */
+  .progress-fill {
+    width: 0%;
+    transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .progress-fill.animate {
+    width: 40%;
+  }
+</style>
 
 <section class="py-24 md:py-32 px-4 sm:px-6 w-full font-sans overflow-hidden">
   <div class="max-w-6xl mx-auto relative z-10">
-    
+    <!-- Cabecera -->
     <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-        <h2 class="text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-[#2D3748] mb-6">
-            Una app, dos mundos.
-        </h2>
-        <p class="text-xl md:text-2xl text-slate-600 font-medium tracking-tight">
-            Mindesk se adapta a quien lo usa. <br class="hidden sm:block" /> Cambia el interruptor para ver la diferencia.
-        </p>
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-[#2D3748] mb-6"
+      >
+        Una app, dos mundos.
+      </h2>
+      <p
+        class="text-lg sm:text-xl md:text-2xl text-slate-600 font-medium tracking-tight"
+      >
+        Mindesk se adapta a quien lo usa. <br class="hidden sm:block" />
+        Cambia el interruptor y compruébalo.
+      </p>
     </div>
 
-    <div class="relative rounded-[2.5rem] bg-linear-to-br from-white/40 to-white/5 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden" id="appSimulator">
-      
-      <div class="flex items-center justify-center px-6 py-4 border-b border-white/40 bg-white/20">
-        
-        <div class="relative bg-white/40 backdrop-blur-md border border-white/60 p-1.5 rounded-full flex items-center cursor-pointer shadow-inner" id="roleToggle">
-            <div class="absolute left-1.5 w-36 h-10 bg-white rounded-full shadow-md transition-transform duration-500 ease-out" id="toggleBg"></div>
-            
-            <button class="relative z-10 w-36 py-2 text-sm font-extrabold text-[#10b981] transition-colors duration-300 text-center focus:outline-none tracking-wide" onclick="setRole('manager')" id="btnManager">
-                Vista Gerente
-            </button>
-            
-            <button class="relative z-10 w-36 py-2 text-sm font-extrabold text-slate-500 hover:text-slate-700 transition-colors duration-300 text-center focus:outline-none tracking-wide" onclick="setRole('pro')" id="btnPro">
-                Vista Terapeuta
-            </button>
-        </div>
+    <!-- Contenedor glass principal -->
+    <div
+      id="appSimulator"
+      class="relative rounded-[2.5rem] bg-linear-to-br from-white/40 to-white/5 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_20px_50px_rgba(16,185,129,0.07)] overflow-hidden transition-shadow duration-700"
+    >
+      <div id="tintOverlay" class="tint-manager"></div>
 
+      <!-- Toggle -->
+      <div
+        class="relative z-10 flex items-center justify-center px-6 py-5 border-b border-white/40 bg-white/15"
+      >
+        <div
+          id="roleToggle"
+          class="relative p-1 rounded-full flex items-center cursor-pointer"
+        >
+          <div
+            id="toggleBg"
+            class="absolute left-1 w-28 sm:w-36 h-10 rounded-full transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+          >
+          </div>
+          <button
+            id="btnManager"
+            onclick="setRole('manager')"
+            class="relative z-10 w-28 sm:w-36 py-2 text-sm font-bold transition-colors duration-300 text-center focus:outline-none tracking-wide text-[#10b981]"
+          >
+            Vista Gerente
+          </button>
+          <button
+            id="btnPro"
+            onclick="setRole('pro')"
+            class="relative z-10 w-28 sm:w-36 py-2 text-sm font-bold transition-colors duration-300 text-center focus:outline-none tracking-wide text-slate-400"
+          >
+            Vista Terapeuta
+          </button>
+        </div>
       </div>
 
-      <div class="grid px-6 py-16 md:px-16 md:py-24">
-        
-        <div id="contentManager" class="col-start-1 row-start-1 transition-all duration-700 opacity-100 z-10 translate-y-0">
-            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-                
-                <div class="flex flex-col order-1 md:order-0">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-wide uppercase mb-6 w-max border border-[#10b981]/20 shadow-sm">
-                        Para la Dirección
-                    </div>
-                    <h3 class="text-3xl md:text-5xl font-extrabold text-[#2D3748] leading-[1.1] mb-6 tracking-tight">
-                        Control total de<br/>tu negocio.
-                    </h3>
-                    <p class="text-slate-700 font-medium leading-relaxed text-lg mb-8">
-                        Como gerente, tu dashboard te muestra la salud financiera y el rendimiento del equipo en tiempo real. Decisiones basadas en datos, no en intuición.
-                    </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-slate-700 font-medium">
-                            <span class="w-6 h-6 rounded-full bg-[#10b981]/10 flex items-center justify-center text-sm shrink-0 border border-[#10b981]/20 text-[#10b981]">✓</span>
-                            Facturación global y pagos pendientes
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-700 font-medium">
-                            <span class="w-6 h-6 rounded-full bg-[#10b981]/10 flex items-center justify-center text-sm shrink-0 border border-[#10b981]/20 text-[#10b981]">✓</span>
-                            Rendimiento por terapeuta
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="relative group order-2 md:order-0 w-full max-w-md mx-auto md:max-w-none">
-                    <div class="absolute inset-0 bg-[#10b981]/20 blur-[80px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
-                    
-                    <div class="relative z-10 bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-4xl shadow-xl border border-white group-hover:-translate-y-2 transition-transform duration-500">
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <div class="text-[11px] text-slate-400 uppercase tracking-widest font-extrabold mb-1">Ingresos del Mes</div>
-                                <div class="text-4xl font-extrabold text-[#2D3748] tracking-tighter">12.450<span class="text-2xl text-slate-400 font-bold">€</span></div>
-                            </div>
-                            <div class="flex items-center gap-1 text-[#10b981] bg-[#10b981]/10 px-2.5 py-1 rounded-lg text-sm font-bold border border-[#10b981]/20">
-                                ↑ 14.5%
-                            </div>
-                        </div>
-                        
-                        <div class="relative h-36 mt-8 flex items-end gap-3 md:gap-4 z-10 border-b border-slate-200/60 pb-1">
-                            <div class="absolute inset-0 flex flex-col justify-between pb-1 pointer-events-none">
-                                <div class="border-t border-slate-200 border-dashed w-full h-px opacity-50"></div>
-                                <div class="border-t border-slate-200 border-dashed w-full h-px opacity-50"></div>
-                                <div class="border-t border-slate-200 border-dashed w-full h-px opacity-50"></div>
-                            </div>
-                            <div class="relative w-1/5 bg-slate-200/60 rounded-t-xl h-[40%] transition-all duration-500 hover:bg-slate-300/60 cursor-pointer"></div>
-                            <div class="relative w-1/5 bg-slate-200/60 rounded-t-xl h-[65%] transition-all duration-500 hover:bg-slate-300/60 cursor-pointer"></div>
-                            <div class="relative w-1/5 bg-slate-200/60 rounded-t-xl h-[50%] transition-all duration-500 hover:bg-slate-300/60 cursor-pointer"></div>
-                            <div class="relative w-1/5 bg-linear-to-t from-[#10b981] to-[#34d399] rounded-t-xl h-[90%] shadow-[0_0_20px_rgba(16,185,129,0.4)] group-hover:scale-y-105 origin-bottom transition-all duration-500 cursor-pointer z-10">
-                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#2D3748] text-white text-[10px] font-bold py-1 px-2.5 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Hoy</div>
-                            </div>
-                            <div class="relative w-1/5 bg-slate-200/60 rounded-t-xl h-[30%] transition-all duration-500 hover:bg-slate-300/60 cursor-pointer"></div>
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-6 -left-6 md:-left-10 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white shadow-xl z-20 flex gap-4 items-center transition-transform duration-700 group-hover:translate-x-2 group-hover:-translate-y-2">
-                        <div class="w-12 h-12 rounded-full bg-[#10b981]/10 flex items-center justify-center text-xl border border-[#10b981]/20">📈</div>
-                        <div>
-                            <div class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">Rentabilidad</div>
-                            <div class="text-base font-extrabold text-[#2D3748]">Óptima</div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Contenido superpuesto -->
+      <div
+        class="relative z-10 grid px-4 py-8 sm:px-6 sm:py-12 md:px-14 md:py-20"
+      >
+        <!-- ══════════════════ GERENTE ══════════════════ -->
+        <div
+          id="contentManager"
+          class="col-start-1 row-start-1 transition-all duration-700 opacity-100 translate-y-0 z-10"
+        >
+          <div
+            class="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-center"
+          >
+            <div class="flex flex-col order-1 md:order-0">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-wide uppercase mb-6 w-max border border-[#10b981]/20"
+              >
+                Para la Dirección
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#2D3748] leading-[1.1] mb-5 tracking-tight"
+              >
+                Todo el negocio,<br />en un vistazo.
+              </h3>
+              <p
+                class="text-slate-700 font-medium leading-relaxed text-base sm:text-lg mb-6 sm:mb-8"
+              >
+                Controla la salud de tu gabinete al segundo. Sin cierres de mes
+                manuales, sin pelearte con Excels y con la seguridad de datos
+                exactos.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <span
+                    class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+                  >
+                    <svg
+                      class="w-2.5 h-2.5 text-[#10b981]"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                    >
+                  </span>
+                  Visibilidad total de ingresos y cobros pendientes.
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <span
+                    class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+                  >
+                    <svg
+                      class="w-2.5 h-2.5 text-[#10b981]"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                    >
+                  </span>
+                  Optimización de agendas y rendimiento del equipo.
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <span
+                    class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+                  >
+                    <svg
+                      class="w-2.5 h-2.5 text-[#10b981]"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                    >
+                  </span>
+                  Tu gabinete siempre contigo: acceso 100% en la nube.
+                </li>
+              </ul>
             </div>
+
+            <!-- Widget dashboard -->
+            <div
+              class="relative group order-2 md:order-0 w-full max-w-md mx-auto md:max-w-none"
+            >
+              <div
+                class="absolute inset-0 bg-[#10b981]/12 blur-[80px] rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-700 z-0"
+              >
+              </div>
+
+              <div
+                class="relative z-10 bg-white/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/80 overflow-hidden"
+              >
+                <!-- Métricas -->
+                <div
+                  class="grid grid-cols-3 divide-x divide-slate-100 border-b border-slate-100"
+                >
+                  <div class="px-4 py-4 text-center">
+                    <div
+                      class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest mb-1"
+                    >
+                      Ingresos
+                    </div>
+                    <div
+                      class="text-xl font-extrabold text-[#2D3748] tracking-tighter leading-none"
+                    >
+                      12.450<span
+                        class="text-xl font-extrabold text-[#2D3748] tracking-tighter leading-none"
+                      >
+                        €</span>
+                    </div>
+                    <div class="text-[10px] font-bold text-[#10b981] mt-1">
+                      ↑ 14.5%
+                    </div>
+                  </div>
+                  <div class="px-4 py-4 text-center">
+                    <div
+                      class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest mb-1"
+                    >
+                      Sesiones
+                    </div>
+                    <div
+                      class="text-xl font-extrabold text-[#2D3748] tracking-tighter leading-none"
+                    >
+                      148
+                    </div>
+                    <div class="text-[10px] font-bold text-[#10b981] mt-1">
+                      ↑ 8%
+                    </div>
+                  </div>
+                  <div class="px-4 py-4 text-center">
+                    <div
+                      class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest mb-1"
+                    >
+                      Pendientes
+                    </div>
+                    <div
+                      class="text-xl font-extrabold text-amber-500 tracking-tighter leading-none"
+                    >
+                      3
+                    </div>
+                    <div class="text-[10px] font-bold text-slate-400 mt-1">
+                      pagos
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Barras -->
+                <div class="px-5 pt-4 pb-5">
+                  <div
+                    class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest mb-3"
+                  >
+                    Ingresos semanales
+                  </div>
+                  <div class="relative h-28 flex items-end gap-2">
+                    <div
+                      class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-0"
+                    >
+                      <div
+                        class="border-t border-slate-100 border-dashed w-full"
+                      >
+                      </div>
+                      <div
+                        class="border-t border-slate-100 border-dashed w-full"
+                      >
+                      </div>
+                      <div
+                        class="border-t border-slate-100 border-dashed w-full"
+                      >
+                      </div>
+                      <div class="h-px"></div>
+                    </div>
+                    <div class="flex-1 bg-slate-100 rounded-lg h-[42%]"></div>
+                    <div class="flex-1 bg-slate-100 rounded-lg h-[60%]"></div>
+                    <div class="flex-1 bg-slate-100 rounded-lg h-[48%]"></div>
+                    <div class="flex-1 bg-slate-100 rounded-lg h-[72%]"></div>
+                    <div
+                      class="relative flex-1 rounded-lg h-[92%] bg-linear-to-t from-[#10b981] to-[#34d399] shadow-[0_0_18px_rgba(16,185,129,0.35)]"
+                    >
+                      <div
+                        class="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#2D3748] text-white text-[9px] font-bold py-1 px-2 rounded-md shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        Hoy · 3.100€
+                      </div>
+                    </div>
+                    <div class="flex-1 bg-slate-100/60 rounded-lg h-[28%]">
+                    </div>
+                    <div class="flex-1 bg-slate-100/40 rounded-lg h-[18%]">
+                    </div>
+                  </div>
+                  <div class="flex gap-2 mt-1.5">
+                    <div
+                      class="flex-1 text-center text-[9px] text-slate-300 font-bold"
+                    >
+                      L
+                    </div>
+                    <div
+                      class="flex-1 text-center text-[9px] text-slate-300 font-bold"
+                    >
+                      M
+                    </div>
+                    <div
+                      class="flex-1 text-center text-[9px] text-slate-300 font-bold"
+                    >
+                      X
+                    </div>
+                    <div
+                      class="flex-1 text-center text-[9px] text-slate-300 font-bold"
+                    >
+                      J
+                    </div>
+                    <div
+                      class="flex-1 text-center text-[9px] text-[#10b981] font-extrabold"
+                    >
+                      V
+                    </div>
+                    <div
+                      class="flex-1 text-center text-[9px] text-slate-200 font-bold"
+                    >
+                      S
+                    </div>
+                    <div
+                      class="flex-1 text-center text-[9px] text-slate-200 font-bold"
+                    >
+                      D
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Especialistas -->
+                <div
+                  class="border-t border-slate-100 px-5 py-3 flex items-center justify-between bg-slate-50/40"
+                >
+                  <div class="flex -space-x-2">
+                    <div
+                      class="w-7 h-7 rounded-full bg-[#b788f4]/15 border-2 border-white flex items-center justify-center text-xs font-bold text-[#b788f4]"
+                    >
+                      L
+                    </div>
+                    <div
+                      class="w-7 h-7 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-xs font-bold text-emerald-600"
+                    >
+                      M
+                    </div>
+                    <div
+                      class="w-7 h-7 rounded-full bg-amber-100 border-2 border-white flex items-center justify-center text-xs font-bold text-amber-600"
+                    >
+                      C
+                    </div>
+                  </div>
+                  <span class="text-[11px] font-bold text-slate-400"
+                    >3 especialistas activos</span
+                  >
+                  <span
+                    class="text-[11px] font-extrabold text-[#10b981] bg-[#10b981]/8 px-2 py-0.5 rounded-full border border-[#10b981]/15"
+                    >Óptimo</span
+                  >
+                </div>
+              </div>
+
+              <!-- Widget flotante — sin movimiento hover -->
+              <div
+                class="hidden sm:flex absolute -bottom-5 -left-5 md:-left-9 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-white shadow-xl z-20 gap-3 items-center"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center shrink-0"
+                >
+                  <svg
+                    class="w-4 h-4 text-[#10b981]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    ><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"
+                    ></polyline><polyline points="16 7 22 7 22 13"
+                    ></polyline></svg
+                  >
+                </div>
+                <div>
+                  <div
+                    class="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest"
+                  >
+                    Rentabilidad
+                  </div>
+                  <div class="text-sm font-extrabold text-[#2D3748]">
+                    ↑ Óptima
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div id="contentPro" class="col-start-1 row-start-1 transition-all duration-700 opacity-0 pointer-events-none z-0 translate-y-8">
-            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-                
-                <div class="flex flex-col order-1 md:order-0">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 text-xs font-bold tracking-wide uppercase mb-6 w-max border border-indigo-500/20 shadow-sm">
-                        Para el Especialista
-                    </div>
-                    <h3 class="text-3xl md:text-5xl font-extrabold text-[#2D3748] leading-[1.1] mb-6 tracking-tight">
-                        Foco absoluto en<br/>tu paciente.
-                    </h3>
-                    <p class="text-slate-700 font-medium leading-relaxed text-lg mb-8">
-                        El ruido administrativo desaparece. Tu vista se centra exclusivamente en tu agenda, las evoluciones clínicas y la terapia.
-                    </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-slate-700 font-medium">
-                            <span class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-sm shrink-0 border border-indigo-100 text-indigo-500">✓</span>
-                            Redacción rápida de informes y notas
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-700 font-medium">
-                            <span class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-sm shrink-0 border border-indigo-100 text-indigo-500">✓</span>
-                            Privacidad estricta con un clic
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="relative group order-2 md:order-0 w-full max-w-md mx-auto md:max-w-none">
-                    <div class="absolute inset-0 bg-indigo-500/15 blur-[80px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
-                    
-                    <div class="relative z-10 bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-4xl shadow-xl border border-white group-hover:-translate-y-2 transition-transform duration-500">
-                        
-                        <div class="flex items-start gap-4 mb-6 border-b border-slate-200/60 pb-5">
-                            <div class="relative w-14 h-14 rounded-2xl bg-linear-to-br from-indigo-50 to-indigo-100 border border-indigo-200 shadow-inner flex items-center justify-center text-2xl z-10 shrink-0">
-                                👩‍🦰
-                                <div class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-[#10b981] border-2 border-white rounded-full"></div>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-extrabold text-[#2D3748] tracking-tight">Ana García</h4>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">Ansiedad</span>
-                                    <span class="bg-slate-100 border border-slate-200 text-slate-500 text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">Sesión #4</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-slate-50/80 rounded-xl p-4 md:p-5 border border-slate-100 mb-6 group-hover:bg-white transition-colors duration-300">
-                            <div class="flex gap-2 mb-3 items-center">
-                                <div class="w-2.5 h-2.5 rounded-full bg-indigo-300"></div>
-                                <div class="h-2 w-1/3 bg-slate-300 rounded"></div>
-                            </div>
-                            <div class="space-y-2.5">
-                                <div class="h-2 w-full bg-indigo-100 rounded"></div>
-                                <div class="h-2 w-5/6 bg-indigo-100 rounded"></div>
-                                <div class="h-2 w-4/6 bg-indigo-100 rounded"></div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full py-4 bg-indigo-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-300 tracking-wide">
-                            Guardar evolución clínica
-                        </button>
-                    </div>
-
-                    <div class="absolute -top-6 -right-6 md:-right-10 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl border border-white shadow-xl z-20 flex gap-3 items-center transition-transform duration-700 rotate-3 group-hover:rotate-0 group-hover:-translate-y-1">
-                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-lg border border-orange-100">
-                            🗓️
-                        </div>
-                        <div class="pr-2">
-                            <div class="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest">Siguiente</div>
-                            <div class="text-sm font-extrabold text-[#2D3748]">Mañana, 10:00</div>
-                        </div>
-                    </div>
-                </div>
-
+        <!-- ══════════════════ TERAPEUTA ══════════════════ -->
+        <div
+          id="contentPro"
+          class="col-start-1 row-start-1 transition-all duration-700 opacity-0 pointer-events-none translate-y-8 z-0"
+        >
+          <div
+            class="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-center"
+          >
+            <div class="flex flex-col order-1 md:order-0">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#b788f4]/10 text-[#b788f4] text-xs font-bold tracking-wide uppercase mb-6 w-max border border-[#b788f4]/20"
+              >
+                Para el Especialista
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#2D3748] leading-[1.1] mb-5 tracking-tight"
+              >
+                Foco total en </br> tu paciente.
+              </h3>
+              <p
+                class="text-slate-700 font-medium leading-relaxed text-base sm:text-lg mb-6 sm:mb-8"
+              >
+                Llega a cada sesión con todo bajo control, al momento y sin llevarte el trabajo a casa.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <span
+                    class="w-5 h-5 rounded-full bg-[#b788f4]/8 border border-[#b788f4]/20 flex items-center justify-center shrink-0"
+                  >
+                    <svg
+                      class="w-2.5 h-2.5 text-[#b788f4]"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                    >
+                  </span>
+                  Toda la información clínica, a un clic de distancia.
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <span
+                    class="w-5 h-5 rounded-full bg-[#b788f4]/8 border border-[#b788f4]/20 flex items-center justify-center shrink-0"
+                  >
+                    <svg
+                      class="w-2.5 h-2.5 text-[#b788f4]"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                    >
+                  </span>
+                  Termina tu sesión con el informe listo.
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <span
+                    class="w-5 h-5 rounded-full bg-[#b788f4]/8 border border-[#b788f4]/20 flex items-center justify-center shrink-0"
+                  >
+                    <svg
+                      class="w-2.5 h-2.5 text-[#b788f4]"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                    >
+                  </span>
+                  Tu jornada organizada y libre de imprevistos.
+                </li>
+              </ul>
             </div>
-        </div>
 
+            <!-- Widget ficha clínica -->
+            <div
+              class="relative group order-2 md:order-0 w-full max-w-md mx-auto md:max-w-none"
+            >
+              <div
+                class="absolute inset-0 bg-[#b788f4]/10 blur-[80px] rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-700 z-0"
+              >
+              </div>
+
+              <div
+                class="relative z-10 bg-white/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/80 overflow-hidden"
+              >
+                <!-- Header sin botones mac -->
+                <div
+                  class="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 bg-white/60"
+                >
+                  <span
+                    class="text-[11px] font-bold text-slate-400 tracking-widest uppercase"
+                    >Sesión activa</span
+                  >
+                  <button
+                    class="flex items-center gap-1.5 text-[10px] font-extrabold text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-full hover:bg-slate-100 transition-colors"
+                  >
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      ><path
+                        d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"
+                      ></path><path
+                        d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"
+                      ></path><line x1="1" y1="1" x2="23" y2="23"></line></svg
+                    >
+                    Privacidad
+                  </button>
+                </div>
+
+                <!-- Paciente con avatar ilustrado -->
+                <div
+                  class="flex items-center gap-4 px-5 pt-4 pb-4 border-b border-slate-100"
+                >
+                  <div class="avatar-wrapper">
+                    <!-- Avatar SVG ilustrado -->
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style="border-radius:14px; display:block;"
+                    >
+                      <defs>
+                        <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stop-color="#f3e8ff"></stop>
+                          <stop offset="100%" stop-color="#e9d5ff"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="bodyGrad"
+                          x1="0"
+                          y1="0"
+                          x2="1"
+                          y2="1"
+                        >
+                          <stop offset="0%" stop-color="#d8b4fe"></stop>
+                          <stop offset="100%" stop-color="#b788f4"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="hairGrad"
+                          x1="0"
+                          y1="0"
+                          x2="1"
+                          y2="1"
+                        >
+                          <stop offset="0%" stop-color="#9333ea"></stop>
+                          <stop offset="100%" stop-color="#b788f4"></stop>
+                        </linearGradient>
+                        <clipPath id="avatarClip">
+                          <rect width="48" height="48" rx="14"></rect>
+                        </clipPath>
+                      </defs>
+                      <!-- Fondo -->
+                      <rect width="48" height="48" rx="14" fill="url(#bgGrad)"
+                      ></rect>
+                      <g clip-path="url(#avatarClip)">
+                        <!-- Cuerpo / hombros -->
+                        <ellipse
+                          cx="24"
+                          cy="54"
+                          rx="16"
+                          ry="12"
+                          fill="url(#bodyGrad)"></ellipse>
+                        <!-- Cuello -->
+                        <rect
+                          x="20"
+                          y="30"
+                          width="8"
+                          height="8"
+                          rx="2"
+                          fill="#fce7f3"></rect>
+                        <!-- Cara -->
+                        <circle cx="24" cy="22" r="10" fill="#fce7f3"></circle>
+                        <!-- Cabello (parte trasera) -->
+                        <ellipse
+                          cx="24"
+                          cy="13"
+                          rx="11"
+                          ry="8"
+                          fill="url(#hairGrad)"></ellipse>
+                        <!-- Flequillo -->
+                        <path
+                          d="M13 17 Q14 10 24 10 Q34 10 35 17 Q30 13 24 14 Q18 13 13 17Z"
+                          fill="url(#hairGrad)"></path>
+                        <!-- Pelo lateral izquierdo -->
+                        <path
+                          d="M13 17 Q11 22 13 28 Q15 24 14 20Z"
+                          fill="url(#hairGrad)"></path>
+                        <!-- Pelo lateral derecho -->
+                        <path
+                          d="M35 17 Q37 22 35 28 Q33 24 34 20Z"
+                          fill="url(#hairGrad)"></path>
+                        <!-- Ojos -->
+                        <circle cx="20.5" cy="22" r="1.5" fill="#7c3aed"
+                        ></circle>
+                        <circle cx="27.5" cy="22" r="1.5" fill="#7c3aed"
+                        ></circle>
+                        <!-- Brillo ojos -->
+                        <circle cx="21.2" cy="21.3" r="0.5" fill="white"
+                        ></circle>
+                        <circle cx="28.2" cy="21.3" r="0.5" fill="white"
+                        ></circle>
+                        <!-- Boca -->
+                        <path
+                          d="M21 26 Q24 28.5 27 26"
+                          stroke="#c084fc"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          fill="none"></path>
+                        <!-- Mejillas -->
+                        <circle
+                          cx="18"
+                          cy="25"
+                          r="2.5"
+                          fill="#f9a8d4"
+                          opacity="0.4"></circle>
+                        <circle
+                          cx="30"
+                          cy="25"
+                          r="2.5"
+                          fill="#f9a8d4"
+                          opacity="0.4"></circle>
+                      </g>
+                      <!-- Borde sutil -->
+                      <rect
+                        width="48"
+                        height="48"
+                        rx="14"
+                        fill="none"
+                        stroke="rgba(183,136,244,0.25)"
+                        stroke-width="1.5"></rect>
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-2">
+                      <h4
+                        class="text-base font-extrabold text-[#2D3748] tracking-tight"
+                      >
+                        Ana García
+                      </h4>
+                      <span
+                        class="bg-[#b788f4]/8 border border-[#b788f4]/20 text-[#b788f4] text-[9px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide"
+                        >Ansiedad</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden"
+                      >
+                        <div
+                          id="progressFill"
+                          class="progress-fill h-full bg-linear-to-r from-[#b788f4] to-[#b788f4] rounded-full"
+                        >
+                        </div>
+                      </div>
+                      <span
+                        class="text-[10px] font-bold text-slate-400 shrink-0"
+                        >Sesión 4 / 10</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Notas -->
+                <div class="px-5 pt-4 pb-3">
+                  <div
+                    class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-2"
+                  >
+                    Evolución clínica · hoy
+                  </div>
+                  <div
+                    class="relative bg-slate-50/80 border border-slate-200/80 rounded-xl p-3.5 min-h-20 group-hover:border-[#b788f4]/30 transition-colors duration-300"
+                  >
+                    <p
+                      class="text-[12px] text-slate-600 leading-relaxed font-medium"
+                    >
+                      La paciente refiere reducción de episodios de activación.
+                      Trabaja técnicas de respiración con
+                    </p>
+                    <span
+                      class="inline-block w-0.5 h-3.5 bg-[#b788f4]/80 ml-0.5 animate-pulse align-middle"
+                    ></span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 mt-2.5">
+                    <span
+                      class="text-[10px] font-bold text-[#b788f4] bg-[#b788f4]/8 border border-[#b788f4]/20 px-2 py-0.5 rounded-full cursor-pointer hover:bg-[#b788f4]/15 transition-colors"
+                      >+ Logro terapéutico</span
+                    >
+                    <span
+                      class="text-[10px] font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full cursor-pointer hover:bg-slate-100 transition-colors"
+                      >+ Tarea para casa</span
+                    >
+                    <span
+                      class="text-[10px] font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full cursor-pointer hover:bg-slate-100 transition-colors"
+                      >+ Incidencia</span
+                    >
+                  </div>
+                </div>
+
+                <div class="px-5 pb-5">
+                  <button
+                    class="w-full py-3.5 bg-[#b788f4] text-white rounded-xl text-sm font-extrabold shadow-lg shadow-[#b788f4]/20 hover:bg-[#a06fe0] hover:-translate-y-0.5 transition-all duration-300 tracking-wide"
+                  >
+                    Guardar evolución clínica
+                  </button>
+                </div>
+              </div>
+
+              <!-- Widget flotante — sin movimiento hover -->
+              <div
+                class="hidden sm:flex absolute -top-5 -right-5 md:-right-9 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-white shadow-xl z-20 gap-3 items-center rotate-2"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0"
+                >
+                  <svg
+                    class="w-4 h-4 text-orange-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><rect x="3" y="4" width="18" height="18" rx="2" ry="2"
+                    ></rect><line x1="16" y1="2" x2="16" y2="6"></line><line
+                      x1="8"
+                      y1="2"
+                      x2="8"
+                      y2="6"></line><line x1="3" y1="10" x2="21" y2="10"
+                    ></line></svg
+                  >
+                </div>
+                <div>
+                  <div
+                    class="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest"
+                  >
+                    Siguiente
+                  </div>
+                  <div class="text-sm font-extrabold text-[#2D3748]">
+                    Mañana, 10:00
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -181,46 +788,85 @@
 
 <script is:inline>
   function setRole(role) {
-    const toggleBg = document.getElementById('toggleBg');
-    const btnManager = document.getElementById('btnManager');
-    const btnPro = document.getElementById('btnPro');
-    
-    const contentManager = document.getElementById('contentManager');
-    const contentPro = document.getElementById('contentPro');
+    const toggleBg = document.getElementById("toggleBg");
+    const btnManager = document.getElementById("btnManager");
+    const btnPro = document.getElementById("btnPro");
+    const cManager = document.getElementById("contentManager");
+    const cPro = document.getElementById("contentPro");
+    const tint = document.getElementById("tintOverlay");
+    const simulator = document.getElementById("appSimulator");
+    const progressFill = document.getElementById("progressFill");
 
-    if (role === 'manager') {
-        // Mover la pastilla a la izquierda
-        toggleBg.style.transform = 'translateX(0)';
-        
-        // Estilos botones (Gerente se ilumina en Verde)
-        btnManager.classList.add('text-[#10b981]');
-        btnManager.classList.remove('text-slate-500');
-        btnPro.classList.remove('text-indigo-600');
-        btnPro.classList.add('text-slate-500');
+    if (role === "manager") {
+      toggleBg.style.transform = "translateX(0)";
 
-        // Transición de contenido (Ocultar Terapeuta, Mostrar Gerente)
-        contentPro.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        contentPro.classList.add('opacity-0', 'pointer-events-none', 'translate-y-8');
-        
-        contentManager.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-8');
-        contentManager.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        
+      btnManager.classList.remove("text-slate-400");
+      btnManager.classList.add("text-[#10b981]");
+      btnPro.classList.remove("text-[#b788f4]");
+      btnPro.classList.add("text-slate-400");
+
+      tint.classList.remove("tint-pro");
+      tint.classList.add("tint-manager");
+      simulator.style.boxShadow =
+        "inset 0 1px 0 rgba(255,255,255,0.8), 0 20px 50px rgba(16,185,129,0.07)";
+
+      cPro.classList.remove(
+        "opacity-100",
+        "pointer-events-auto",
+        "translate-y-0",
+      );
+      cPro.classList.add("opacity-0", "pointer-events-none", "translate-y-8");
+      cManager.classList.remove(
+        "opacity-0",
+        "pointer-events-none",
+        "translate-y-8",
+      );
+      cManager.classList.add(
+        "opacity-100",
+        "pointer-events-auto",
+        "translate-y-0",
+      );
     } else {
-        // Mover la pastilla a la derecha
-        toggleBg.style.transform = 'translateX(100%)';
-        
-        // Estilos botones (Terapeuta se ilumina en Morado)
-        btnManager.classList.remove('text-[#10b981]');
-        btnManager.classList.add('text-slate-500');
-        btnPro.classList.add('text-indigo-600');
-        btnPro.classList.remove('text-slate-500');
+      toggleBg.style.transform = "translateX(100%)";
 
-        // Transición de contenido (Ocultar Gerente, Mostrar Terapeuta)
-        contentManager.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        contentManager.classList.add('opacity-0', 'pointer-events-none', 'translate-y-8');
-        
-        contentPro.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-8');
-        contentPro.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      btnPro.classList.remove("text-slate-400");
+      btnPro.classList.add("text-[#b788f4]");
+      btnManager.classList.remove("text-[#10b981]");
+      btnManager.classList.add("text-slate-400");
+
+      tint.classList.remove("tint-manager");
+      tint.classList.add("tint-pro");
+      simulator.style.boxShadow =
+        "inset 0 1px 0 rgba(255,255,255,0.8), 0 20px 50px rgba(183,136,244,0.08)";
+
+      cManager.classList.remove(
+        "opacity-100",
+        "pointer-events-auto",
+        "translate-y-0",
+      );
+      cManager.classList.add(
+        "opacity-0",
+        "pointer-events-none",
+        "translate-y-8",
+      );
+      cPro.classList.remove(
+        "opacity-0",
+        "pointer-events-none",
+        "translate-y-8",
+      );
+      cPro.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
+
+      // Animar barra de progreso
+      if (progressFill) {
+        progressFill.classList.remove("animate");
+        void progressFill.offsetWidth; // reflow
+        setTimeout(() => progressFill.classList.add("animate"), 60);
+      }
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBg = document.getElementById("toggleBg");
+    if (toggleBg) toggleBg.style.transform = "translateX(0)";
+  });
 </script>

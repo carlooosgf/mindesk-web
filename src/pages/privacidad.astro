@@ -1,52 +1,238 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Política de Privacidad | Mindesk">
-    <section class="py-20 px-6 bg-white">
-        <div class="max-w-3xl mx-auto space-y-8">
-            
-            <div class="border-b border-slate-200 pb-8 mb-8">
-                <h1 class="text-3xl md:text-4xl font-serif font-medium text-brand-text mb-4">Política de Privacidad</h1>
-                <p class="text-slate-500">Última actualización: Febrero 2026</p>
-            </div>
+  <section
+    class="relative min-h-[calc(100vh-80px)] py-20 px-4 sm:px-6 flex items-center justify-center font-sans overflow-hidden z-10"
+  >
+    <div
+      class="absolute top-10 left-10 w-96 h-96 bg-[#10b981]/10 blur-[120px] rounded-full pointer-events-none z-0"
+    >
+    </div>
+    <div
+      class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none z-0"
+    >
+    </div>
 
-            <div class="space-y-6 text-slate-700 leading-relaxed text-justify">
-                
-                <h2 class="text-xl font-bold text-brand-text mt-8">1. Responsable del Tratamiento</h2>
-                <p>
-                    Aunque Mindesk se encuentra en fase de desarrollo y no constituye una empresa comercial, estamos comprometidos con la seguridad de sus datos conforme al RGPD. El responsable de los datos recogidos es:
-                </p>
-                <div class="bg-slate-50 p-6 rounded-lg border border-slate-100">
-                    <p><strong>Responsable:</strong> [PON AQUÍ TU NOMBRE Y APELLIDOS]</p>
-                    <p><strong>Ubicación:</strong> Dos Hermanas, Sevilla</p>
-                    <p><strong>Contacto DPO:</strong> hola@mindesk.es</p>
-                </div>
+    <div
+      class="relative w-full max-w-4xl bg-linear-to-br from-white/80 to-white/40 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_50px_rgba(0,0,0,0.05)] border border-white/80 z-10"
+    >
+      <div
+        class="border-b border-slate-200/60 pb-8 mb-10 text-center md:text-left"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-[#2D3748] tracking-tight mb-4"
+        >
+          Política de Privacidad.
+        </h1>
+        <p
+          class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest"
+        >
+          Última actualización: Marzo 2026
+        </p>
+      </div>
 
-                <h2 class="text-xl font-bold text-brand-text mt-8">2. Finalidad de los datos</h2>
-                <p>Recogemos los datos mínimos necesarios (nombre, email profesional y teléfono) con las siguientes finalidades no comerciales:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Gestionar la invitación a la fase Beta de la plataforma.</li>
-                    <li>Coordinar la visita técnica presencial en sus instalaciones.</li>
-                    <li>Recabar feedback y opiniones para la mejora del software.</li>
-                </ul>
+      <div class="space-y-10 text-slate-600 font-medium leading-relaxed">
+        <section>
+          <h2
+            class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+          >
+            <span
+              class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+              >1</span
+            >
+            Responsable del Tratamiento
+          </h2>
+          <p class="mb-5">
+            Aunque Mindesk se encuentra en fase de desarrollo y no constituye
+            una empresa comercial, estamos comprometidos de manera estricta con
+            la seguridad de tus datos conforme al Reglamento General de
+            Protección de Datos (RGPD). El responsable de los datos recogidos
+            es:
+          </p>
+          <div
+            class="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col gap-2"
+          >
+            <p>
+              <strong class="text-[#2D3748]">Responsable:</strong> Carlos González
+              Fernández
+            </p>
+            <p>
+              <strong class="text-[#2D3748]">Ubicación:</strong> Dos Hermanas, Sevilla
+            </p>
+            <p>
+              <strong class="text-[#2D3748]">Contacto DPO:</strong>
+              <a
+                href="mailto:info@mindesk.es"
+                class="text-[#10b981] hover:underline transition-all"
+                >info@mindesk.es</a>
+            </p>
+          </div>
+        </section>
 
-                <h2 class="text-xl font-bold text-brand-text mt-8">3. Legitimación</h2>
-                <p>
-                    La base legal es el <strong>consentimiento expreso</strong> del interesado. Al rellenar el formulario de solicitud de visita, usted acepta libremente ser contactado por los promotores del proyecto para los fines descritos.
-                </p>
+        <section>
+          <h2
+            class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+          >
+            <span
+              class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+              >2</span
+            >
+            Finalidad de los datos
+          </h2>
+          <p class="mb-4">
+            Recogemos los datos mínimos necesarios (nombre, email profesional y
+            teléfono) con las siguientes finalidades no comerciales:
+          </p>
+          <ul class="space-y-3 mb-5 pl-2">
+            <li class="flex items-start gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0 mt-0.5"
+                ><svg
+                  class="w-2.5 h-2.5 text-[#10b981]"
+                  viewBox="0 0 10 8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                ></span
+              >
+              Gestionar la invitación a la fase Beta de la plataforma.
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0 mt-0.5"
+                ><svg
+                  class="w-2.5 h-2.5 text-[#10b981]"
+                  viewBox="0 0 10 8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                ></span
+              >
+              Coordinar la visita técnica presencial en tus instalaciones.
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0 mt-0.5"
+                ><svg
+                  class="w-2.5 h-2.5 text-[#10b981]"
+                  viewBox="0 0 10 8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                ></span
+              >
+              Recabar feedback y opiniones para la mejora del software.
+            </li>
+          </ul>
+          <p
+            class="text-slate-500 text-sm bg-slate-50/50 p-4 rounded-xl border border-slate-100"
+          >
+            <strong class="text-[#2D3748]">Conservación:</strong> Los datos se conservarán
+            mientras dure la fase de desarrollo y Beta del proyecto, o hasta que solicites
+            su eliminación.
+          </p>
+        </section>
 
-                <h2 class="text-xl font-bold text-brand-text mt-8">4. Destinatarios</h2>
-                <p>
-                    Sus datos son estrictamente confidenciales. No se cederán a terceros ni se utilizarán para enviar publicidad comercial de otras empresas. Se alojan en servidores seguros dentro de la Unión Europea (o proveedores adheridos a marcos de seguridad internacionales).
-                </p>
+        <section>
+          <h2
+            class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+          >
+            <span
+              class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+              >3</span
+            >
+            Legitimación
+          </h2>
+          <p>
+            La base legal es el <strong>consentimiento expreso</strong> del interesado.
+            Al rellenar el formulario de solicitud de visita, aceptas libremente ser
+            contactado por los promotores del proyecto para los fines descritos anteriormente.
+          </p>
+        </section>
 
-                <h2 class="text-xl font-bold text-brand-text mt-8">5. Sus Derechos</h2>
-                <p>
-                    Puede ejercer en cualquier momento sus derechos de acceso, rectificación, supresión y oposición enviando un email a <strong>hola@mindesk.es</strong>. Dado que el proyecto está en desarrollo, si decide darse de baja, eliminaremos toda su información de nuestra base de datos de pruebas inmediatamente.
-                </p>
+        <section>
+          <h2
+            class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+          >
+            <span
+              class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+              >4</span
+            >
+            Destinatarios
+          </h2>
+          <p>
+            Tus datos son estrictamente confidenciales. No se cederán a terceros
+            ni se utilizarán para enviar publicidad comercial de otras empresas.
+            Se alojan en servidores seguros dentro de la Unión Europea (o
+            proveedores adheridos a marcos de seguridad internacionales
+            vigentes).
+          </p>
+        </section>
 
-            </div>
-        </div>
-    </section>
+        <section>
+          <h2
+            class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+          >
+            <span
+              class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+              >5</span
+            >
+            Uso de Cookies y Analítica Web
+          </h2>
+          <p class="mb-4">
+            Esta página web utiliza <strong>Google Analytics</strong>, un
+            servicio de analítica web prestado por Google LLC. Este servicio
+            utiliza "cookies" (archivos de texto que se guardan en tu ordenador)
+            para ayudarnos a analizar cómo los usuarios utilizan el sitio web
+            (páginas visitadas, tiempo de permanencia, ciudad de origen).
+          </p>
+          <p>
+            La información generada por la cookie es directamente transmitida y
+            archivada por Google en sus servidores de Estados Unidos. <strong
+              >Esta herramienta solo se activa si nos das tu consentimiento
+              explícito</strong
+            > a través del banner de cookies inicial. Si decides rechazar las cookies,
+            no rastrearemos tu navegación, garantizando tu anonimato total.
+          </p>
+        </section>
+
+        <section>
+          <h2
+            class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+          >
+            <span
+              class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+              >5</span
+            >
+            Tus Derechos
+          </h2>
+          <p class="mb-4">
+            Puedes ejercer en cualquier momento tus derechos de acceso,
+            rectificación, supresión y oposición enviando un email a <strong
+              class="text-[#2D3748]">info@mindesk.es</strong
+            >. Dado que el proyecto está en desarrollo, si decides darte de
+            baja, eliminaremos toda tu información de nuestra base de datos de
+            pruebas de forma inmediata.
+          </p>
+          <p>
+            Asimismo, te informamos de que tienes derecho a presentar una
+            reclamación ante la <strong class="text-[#2D3748]"
+              >Agencia Española de Protección de Datos (AEPD)</strong
+            > si consideras que el tratamiento no se ajusta a la normativa vigente.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
 </Layout>

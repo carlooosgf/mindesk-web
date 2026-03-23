@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "neurogestion-57d30"
+  },
+  "targets": {
+    "neurogestion-57d30": {
+      "hosting": {
+        "web-nueva": [
+          "mindesk-web-site"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
