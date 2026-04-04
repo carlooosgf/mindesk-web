@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mensaje-enviado
+
+Sitemap: https://www.mindesk.es/sitemap-index.xml

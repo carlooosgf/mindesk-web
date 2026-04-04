@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <style>
@@ -14,7 +15,7 @@
       overflow: clip;
     }
   }
-  
+
   /* ── En móvil, overflow hidden y spacing optimizado ── */
   @media (max-width: 767px) {
     .feat-scroll-card {
@@ -23,12 +24,12 @@
       padding-top: 1.25rem !important;
       padding-bottom: 1.75rem !important;
     }
-    
+
     /* Espaciado entre elementos en móvil */
     .feat-card-text {
       margin-bottom: 1.5rem;
     }
-    
+
     /* Los widgets necesitan espacio para respirar */
     .feat-card-widget {
       margin-bottom: 0.5rem;
@@ -59,7 +60,9 @@
   }
 
   /* ── Barra ocupación (sin animación) ── */
-  .ocupacion-bar { width: 75%; }
+  .ocupacion-bar {
+    width: 75%;
+  }
 
   /* ── Checkmark RGPD (visible desde el inicio) ── */
   .shield-check {
@@ -70,555 +73,1280 @@
 
 <section class="py-12 sm:py-16 px-4 sm:px-6 w-full font-sans overflow-hidden">
   <div class="max-w-6xl mx-auto">
-
     <!-- Cabecera -->
     <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 md:mb-20">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-[#2D3748] mb-6">
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-[#2D3748] mb-6"
+      >
         El final del caos.
       </h2>
-      <p class="text-lg sm:text-xl md:text-2xl text-slate-600 font-medium tracking-tight">
-        Todo lo que necesitas para gestionar tu gabinete,<br class="hidden sm:block"/> en un solo lugar.
+      <p
+        class="text-lg sm:text-xl md:text-2xl text-slate-600 font-medium tracking-tight"
+      >
+        Todo lo que necesitas para gestionar tu gabinete,<br
+          class="hidden sm:block"
+        /> en un solo lugar.
       </p>
     </div>
 
     <!-- Stack vertical de cards -->
     <div id="featCardsContainer" class="flex flex-col gap-5">
-
       <!-- ══════════════════════════════════════════════════════ -->
       <!-- CARD 1 — Todo conectado, nada duplicado              -->
       <!-- ══════════════════════════════════════════════════════ -->
-      <div class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(16,185,129,0.08)] flex flex-col md:flex-row items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-145 md:min-h-0">
-
+      <div
+        class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(16,185,129,0.08)] flex flex-col md:flex-row items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-145 md:min-h-0"
+      >
         <!-- Glow -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-[#10b981]/6 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#b788f4]/4 blur-[100px] rounded-full pointer-events-none"></div>
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-[#10b981]/6 blur-[120px] rounded-full pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-[#b788f4]/4 blur-[100px] rounded-full pointer-events-none"
+        >
+        </div>
 
         <!-- Texto -->
         <div class="feat-card-text flex-1 relative z-10 max-w-lg">
-          <div class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20">
+          <div
+            class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20"
+          >
             01 · Flujo unificado
           </div>
-          <h3 class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]">
-            Tu flujo de trabajo, </br> en una sola pestaña.
-          </h3>
-          <p class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7">
-            Deja de saltar entre la agenda, el Word y tus notas. En Mindesk, la información fluye sola: al terminar la cita, tu borrador ya está listo. Sin copiar, sin pegar y sin errores manuales.
-          </p>
-          <!-- Stat de impacto -->
-          <div class="feat-card-child inline-flex items-center gap-3 sm:gap-4 bg-white/60 border border-white rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-sm backdrop-blur-sm">
-            <span class="stat-value text-2xl sm:text-3xl font-extrabold text-[#b788f4]" id="stat-minutos">−40 min</span>
-            <div class="w-px h-8 bg-slate-200 shrink-0"></div>
-            <span class="text-slate-500 font-medium text-sm leading-tight">de papeleo<br/> al día</span>
-          </div>
+          <h3
+            class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]"
+          >
+            Tu flujo de trabajo,
+          </h3> en una sola pestaña.
         </div>
-
-        <!-- Widget: Antes / Después -->
-        <div class="feat-card-widget feat-card-child relative z-10 w-full md:w-90 shrink-0 mt-4 md:mt-0">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/60 bg-white/30 backdrop-blur-xl h-64 sm:h-72 md:h-80">
-
-            <!-- ── LADO IZQUIERDO: ANTES ── -->
-            <div class="absolute inset-y-0 left-0 w-[48%] bg-linear-to-br from-red-50/80 to-orange-50/60 flex flex-col p-3 gap-2 overflow-hidden">
-              <span class="text-[9px] font-extrabold text-red-400 uppercase tracking-widest mb-1">Antes</span>
-
-              <!-- Apps caóticas -->
-              <div class="flex flex-wrap gap-2">
-                <!-- WhatsApp -->
-                <div class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center" style="transform:rotate(-4deg)">
-                  <svg width="20" height="20" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5 10.9 5.5 6.4 10 6.4 15.5c0 1.8.5 3.5 1.3 5L6 26l5.7-1.5c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10 0-2.7-1-5.2-2.9-7.2z" fill="white" opacity=".2"/><path d="M22 19.8c-.3.8-1.5 1.5-2.1 1.6-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4l-.3.5c-.1.1-.2.3-.1.5.4.6.9 1.2 1.4 1.7.6.5 1.2.9 1.9 1.2.2.1.3.1.5 0l.4-.5c.1-.2.3-.2.5-.1l1.8.8c.2.1.4.2.4.3.1.4-.1 1.3-.4 1.8z" fill="white"/></svg>
-                </div>
-                <!-- Excel -->
-                <div class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center" style="transform:rotate(3deg)">
-                  <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#217346"/><path d="M18 8h8v16h-8z" fill="#185C37"/><path d="M6 8l10 8-10 8V8z" fill="white" opacity=".9"/><path d="M8 12l4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/><line x1="18" y1="13" x2="26" y2="13" stroke="white" stroke-width="1.5" opacity=".7"/><line x1="18" y1="16" x2="26" y2="16" stroke="white" stroke-width="1.5" opacity=".7"/><line x1="18" y1="19" x2="26" y2="19" stroke="white" stroke-width="1.5" opacity=".7"/></svg>
-                </div>
-                <!-- Google Calendar -->
-                <div class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center" style="transform:rotate(-2deg)">
-                  <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="white" stroke="#e0e0e0"/><rect x="4" y="8" width="24" height="20" rx="3" fill="white" stroke="#4285F4" stroke-width="1.5"/><rect x="4" y="8" width="24" height="7" rx="3" fill="#4285F4"/><rect x="4" y="12" width="24" height="3" fill="#4285F4"/><line x1="11" y1="4" x2="11" y2="12" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="4" x2="21" y2="12" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/><text x="16" y="25" text-anchor="middle" font-size="9" font-weight="800" fill="#4285F4" font-family="sans-serif">16</text></svg>
-                </div>
-                <!-- Word -->
-                <div class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center" style="transform:rotate(5deg)">
-                  <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#2B579A"/><path d="M7 9h18v14H7z" fill="white" opacity=".15"/><text x="16" y="22" text-anchor="middle" font-size="14" font-weight="900" fill="white" font-family="sans-serif">W</text></svg>
-                </div>
-                <!-- Drive -->
-                <div class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center" style="transform:rotate(-3deg)">
-                  <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M16 4L6 20h20L16 4z" fill="#FBBC04"/><path d="M6 20L2 27h12L6 20z" fill="#34A853"/><path d="M26 20L22 27h8L26 20z" fill="#EA4335"/><path d="M6 20h20L16 4 6 20z" fill="#4285F4" opacity=".3"/></svg>
-                </div>
-                <!-- Notas papel -->
-                <div class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center" style="transform:rotate(2deg)">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="12" height="14" rx="2" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.2"/><line x1="5" y1="5" x2="11" y2="5" stroke="#F59E0B" stroke-width="1" opacity=".7" stroke-linecap="round"/><line x1="5" y1="8" x2="11" y2="8" stroke="#F59E0B" stroke-width="1" opacity=".5" stroke-linecap="round"/><line x1="5" y1="11" x2="9" y2="11" stroke="#F59E0B" stroke-width="1" opacity=".4" stroke-linecap="round"/></svg>
-                </div>
-              </div>
-
-              <!-- Caos visual -->
-              <div class="mt-1 space-y-1.5">
-                <div class="flex items-center gap-1.5 text-[9px] text-red-400 font-bold">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4.5" stroke="#f87171" stroke-width="1"/><line x1="3" y1="3" x2="7" y2="7" stroke="#f87171" stroke-width="1.4" stroke-linecap="round"/><line x1="7" y1="3" x2="3" y2="7" stroke="#f87171" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  Caos de herramientas
-                </div>
-                <div class="flex items-center gap-1.5 text-[9px] text-red-400 font-bold">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4.5" stroke="#f87171" stroke-width="1"/><line x1="3" y1="3" x2="7" y2="7" stroke="#f87171" stroke-width="1.4" stroke-linecap="round"/><line x1="7" y1="3" x2="3" y2="7" stroke="#f87171" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  Información fragmentada
-                </div>
-                <div class="flex items-center gap-1.5 text-[9px] text-red-400 font-bold">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4.5" stroke="#f87171" stroke-width="1"/><line x1="3" y1="3" x2="7" y2="7" stroke="#f87171" stroke-width="1.4" stroke-linecap="round"/><line x1="7" y1="3" x2="3" y2="7" stroke="#f87171" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  40 min tirados al día
-                </div>
-              </div>
-            </div>
-
-            <!-- ── DIVISOR CENTRAL ── -->
-            <div class="absolute inset-y-0 left-[48%] w-px bg-slate-200/80 z-10"></div>
-            <div class="absolute top-1/2 left-[48%] -translate-x-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center">
-              <span class="text-[8px] font-black text-slate-400">VS</span>
-            </div>
-
-            <!-- ── LADO DERECHO: DESPUÉS ── -->
-            <div class="absolute inset-y-0 right-0 w-[52%] bg-linear-to-br from-emerald-50/80 to-teal-50/50 flex flex-col p-3 gap-2 overflow-hidden">
-              <span class="text-[9px] font-extrabold text-[#10b981] uppercase tracking-widest mb-1">Con Mindesk</span>
-
-              <!-- Módulos unificados -->
-              <div class="space-y-1.5 mt-0.5">
-                <div class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#10b981]/15">
-                  <div class="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0"></div>
-                  <span class="text-[9px] font-bold text-slate-600">Agenda</span>
-                </div>
-                <div class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#b788f4]/15">
-                  <div class="w-1.5 h-1.5 rounded-full bg-[#b788f4] shrink-0"></div>
-                  <span class="text-[9px] font-bold text-slate-600">Historial clínico</span>
-                </div>
-                <div class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#10b981]/15">
-                  <div class="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0"></div>
-                  <span class="text-[9px] font-bold text-slate-600">Notas de sesión</span>
-                </div>
-                <div class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#b788f4]/15">
-                  <div class="w-1.5 h-1.5 rounded-full bg-[#b788f4] shrink-0"></div>
-                  <span class="text-[9px] font-bold text-slate-600">Documentos</span>
-                </div>
-              </div>
-
-              <!-- Resultado -->
-              <div class="mt-1 space-y-1.5">
-                <div class="flex items-center gap-1.5 text-[9px] text-[#10b981] font-bold">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4.5" stroke="#10b981" stroke-width="1"/><polyline points="2.5,5 4,6.5 7.5,3" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Todo en uno
-                </div>
-                <div class="flex items-center gap-1.5 text-[9px] text-[#10b981] font-bold">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4.5" stroke="#10b981" stroke-width="1"/><polyline points="2.5,5 4,6.5 7.5,3" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Sincronización total
-                </div>
-                <div class="flex items-center gap-1.5 text-[9px] text-[#10b981] font-bold">
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4.5" stroke="#10b981" stroke-width="1"/><polyline points="2.5,5 4,6.5 7.5,3" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  40 min recuperados
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <p
+          class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7"
+        >
+          Deja de saltar entre la agenda, el Word y tus notas. En Mindesk, la
+          información fluye sola: al terminar la cita, tu borrador ya está
+          listo. Sin copiar, sin pegar y sin errores manuales.
+        </p>
+        <!-- Stat de impacto -->
+        <div
+          class="feat-card-child inline-flex items-center gap-3 sm:gap-4 bg-white/60 border border-white rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-sm backdrop-blur-sm"
+        >
+          <span
+            class="stat-value text-2xl sm:text-3xl font-extrabold text-[#b788f4]"
+            id="stat-minutos">−40 min</span
+          >
+          <div class="w-px h-8 bg-slate-200 shrink-0"></div>
+          <span class="text-slate-500 font-medium text-sm leading-tight"
+            >de papeleo<br /> al día</span
+          >
         </div>
       </div>
 
-      <!-- ══════════════════════════════════════════════════════ -->
-      <!-- CARD 2 — Agenda sin conflictos                        -->
-      <!-- ══════════════════════════════════════════════════════ -->
-      <div class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(183,136,244,0.08)] flex flex-col md:flex-row-reverse items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-150 md:min-h-0">
-        <div class="absolute top-0 left-0 w-80 h-80 bg-[#b788f4]/6 blur-[100px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-56 h-56 bg-[#10b981]/4 blur-[80px] rounded-full pointer-events-none"></div>
+      <!-- Widget: Antes / Después -->
+      <div
+        class="feat-card-widget feat-card-child relative z-10 w-full md:w-90 shrink-0 mt-4 md:mt-0"
+      >
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/60 bg-white/30 backdrop-blur-xl h-64 sm:h-72 md:h-80"
+        >
+          <!-- ── LADO IZQUIERDO: ANTES ── -->
+          <div
+            class="absolute inset-y-0 left-0 w-[48%] bg-linear-to-br from-red-50/80 to-orange-50/60 flex flex-col p-3 gap-2 overflow-hidden"
+          >
+            <span
+              class="text-[9px] font-extrabold text-red-400 uppercase tracking-widest mb-1"
+              >Antes</span
+            >
 
-        <!-- Texto -->
-        <div class="feat-card-text flex-1 relative z-10 max-w-lg">
-          <div class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20">
-            02 · Agenda inteligente
+            <!-- Apps caóticas -->
+            <div class="flex flex-wrap gap-2">
+              <!-- WhatsApp -->
+              <div
+                class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center"
+                style="transform:rotate(-4deg)"
+              >
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="none"
+                  ><circle cx="16" cy="16" r="16" fill="#25D366"></circle><path
+                    d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5 10.9 5.5 6.4 10 6.4 15.5c0 1.8.5 3.5 1.3 5L6 26l5.7-1.5c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10 0-2.7-1-5.2-2.9-7.2z"
+                    fill="white"
+                    opacity=".2"></path><path
+                    d="M22 19.8c-.3.8-1.5 1.5-2.1 1.6-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4l-.3.5c-.1.1-.2.3-.1.5.4.6.9 1.2 1.4 1.7.6.5 1.2.9 1.9 1.2.2.1.3.1.5 0l.4-.5c.1-.2.3-.2.5-.1l1.8.8c.2.1.4.2.4.3.1.4-.1 1.3-.4 1.8z"
+                    fill="white"></path></svg
+                >
+              </div>
+              <!-- Excel -->
+              <div
+                class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center"
+                style="transform:rotate(3deg)"
+              >
+                <svg width="18" height="18" viewBox="0 0 32 32" fill="none"
+                  ><rect width="32" height="32" rx="6" fill="#217346"
+                  ></rect><path d="M18 8h8v16h-8z" fill="#185C37"></path><path
+                    d="M6 8l10 8-10 8V8z"
+                    fill="white"
+                    opacity=".9"></path><path
+                    d="M8 12l4 4-4 4"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    fill="none"></path><line
+                    x1="18"
+                    y1="13"
+                    x2="26"
+                    y2="13"
+                    stroke="white"
+                    stroke-width="1.5"
+                    opacity=".7"></line><line
+                    x1="18"
+                    y1="16"
+                    x2="26"
+                    y2="16"
+                    stroke="white"
+                    stroke-width="1.5"
+                    opacity=".7"></line><line
+                    x1="18"
+                    y1="19"
+                    x2="26"
+                    y2="19"
+                    stroke="white"
+                    stroke-width="1.5"
+                    opacity=".7"></line></svg
+                >
+              </div>
+              <!-- Google Calendar -->
+              <div
+                class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center"
+                style="transform:rotate(-2deg)"
+              >
+                <svg width="18" height="18" viewBox="0 0 32 32" fill="none"
+                  ><rect
+                    width="32"
+                    height="32"
+                    rx="6"
+                    fill="white"
+                    stroke="#e0e0e0"></rect><rect
+                    x="4"
+                    y="8"
+                    width="24"
+                    height="20"
+                    rx="3"
+                    fill="white"
+                    stroke="#4285F4"
+                    stroke-width="1.5"></rect><rect
+                    x="4"
+                    y="8"
+                    width="24"
+                    height="7"
+                    rx="3"
+                    fill="#4285F4"></rect><rect
+                    x="4"
+                    y="12"
+                    width="24"
+                    height="3"
+                    fill="#4285F4"></rect><line
+                    x1="11"
+                    y1="4"
+                    x2="11"
+                    y2="12"
+                    stroke="#EA4335"
+                    stroke-width="2.5"
+                    stroke-linecap="round"></line><line
+                    x1="21"
+                    y1="4"
+                    x2="21"
+                    y2="12"
+                    stroke="#EA4335"
+                    stroke-width="2.5"
+                    stroke-linecap="round"></line><text
+                    x="16"
+                    y="25"
+                    text-anchor="middle"
+                    font-size="9"
+                    font-weight="800"
+                    fill="#4285F4"
+                    font-family="sans-serif">16</text
+                  ></svg
+                >
+              </div>
+              <!-- Word -->
+              <div
+                class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center"
+                style="transform:rotate(5deg)"
+              >
+                <svg width="18" height="18" viewBox="0 0 32 32" fill="none"
+                  ><rect width="32" height="32" rx="6" fill="#2B579A"
+                  ></rect><path d="M7 9h18v14H7z" fill="white" opacity=".15"
+                  ></path><text
+                    x="16"
+                    y="22"
+                    text-anchor="middle"
+                    font-size="14"
+                    font-weight="900"
+                    fill="white"
+                    font-family="sans-serif">W</text
+                  ></svg
+                >
+              </div>
+              <!-- Drive -->
+              <div
+                class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center"
+                style="transform:rotate(-3deg)"
+              >
+                <svg width="18" height="18" viewBox="0 0 32 32" fill="none"
+                  ><path d="M16 4L6 20h20L16 4z" fill="#FBBC04"></path><path
+                    d="M6 20L2 27h12L6 20z"
+                    fill="#34A853"></path><path
+                    d="M26 20L22 27h8L26 20z"
+                    fill="#EA4335"></path><path
+                    d="M6 20h20L16 4 6 20z"
+                    fill="#4285F4"
+                    opacity=".3"></path></svg
+                >
+              </div>
+              <!-- Notas papel -->
+              <div
+                class="w-9 h-9 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center"
+                style="transform:rotate(2deg)"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                  ><rect
+                    x="2"
+                    y="1"
+                    width="12"
+                    height="14"
+                    rx="2"
+                    fill="#FEF3C7"
+                    stroke="#F59E0B"
+                    stroke-width="1.2"></rect><line
+                    x1="5"
+                    y1="5"
+                    x2="11"
+                    y2="5"
+                    stroke="#F59E0B"
+                    stroke-width="1"
+                    opacity=".7"
+                    stroke-linecap="round"></line><line
+                    x1="5"
+                    y1="8"
+                    x2="11"
+                    y2="8"
+                    stroke="#F59E0B"
+                    stroke-width="1"
+                    opacity=".5"
+                    stroke-linecap="round"></line><line
+                    x1="5"
+                    y1="11"
+                    x2="9"
+                    y2="11"
+                    stroke="#F59E0B"
+                    stroke-width="1"
+                    opacity=".4"
+                    stroke-linecap="round"></line></svg
+                >
+              </div>
+            </div>
+
+            <!-- Caos visual -->
+            <div class="mt-1 space-y-1.5">
+              <div
+                class="flex items-center gap-1.5 text-[9px] text-red-400 font-bold"
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  ><circle
+                    cx="5"
+                    cy="5"
+                    r="4.5"
+                    stroke="#f87171"
+                    stroke-width="1"></circle><line
+                    x1="3"
+                    y1="3"
+                    x2="7"
+                    y2="7"
+                    stroke="#f87171"
+                    stroke-width="1.4"
+                    stroke-linecap="round"></line><line
+                    x1="7"
+                    y1="3"
+                    x2="3"
+                    y2="7"
+                    stroke="#f87171"
+                    stroke-width="1.4"
+                    stroke-linecap="round"></line></svg
+                >
+                Caos de herramientas
+              </div>
+              <div
+                class="flex items-center gap-1.5 text-[9px] text-red-400 font-bold"
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  ><circle
+                    cx="5"
+                    cy="5"
+                    r="4.5"
+                    stroke="#f87171"
+                    stroke-width="1"></circle><line
+                    x1="3"
+                    y1="3"
+                    x2="7"
+                    y2="7"
+                    stroke="#f87171"
+                    stroke-width="1.4"
+                    stroke-linecap="round"></line><line
+                    x1="7"
+                    y1="3"
+                    x2="3"
+                    y2="7"
+                    stroke="#f87171"
+                    stroke-width="1.4"
+                    stroke-linecap="round"></line></svg
+                >
+                Información fragmentada
+              </div>
+              <div
+                class="flex items-center gap-1.5 text-[9px] text-red-400 font-bold"
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  ><circle
+                    cx="5"
+                    cy="5"
+                    r="4.5"
+                    stroke="#f87171"
+                    stroke-width="1"></circle><line
+                    x1="3"
+                    y1="3"
+                    x2="7"
+                    y2="7"
+                    stroke="#f87171"
+                    stroke-width="1.4"
+                    stroke-linecap="round"></line><line
+                    x1="7"
+                    y1="3"
+                    x2="3"
+                    y2="7"
+                    stroke="#f87171"
+                    stroke-width="1.4"
+                    stroke-linecap="round"></line></svg
+                >
+                40 min tirados al día
+              </div>
+            </div>
           </div>
-          <h3 class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]">
-            Agendas perfectas. </br> Cero conflictos.
-          </h3>
-          <p class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7">
-            Olvídate del estrés de los solapamientos. El sistema detecta conflictos antes de que ocurran y te ayuda a reorganizar cancelaciones en segundos. Un gabinete en orden es un equipo que trabaja tranquilo.
-          </p>
-          <div class="feat-card-child inline-flex items-center gap-3 sm:gap-4 bg-white/60 border border-white rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-sm backdrop-blur-sm">
-            <span class="stat-value text-2xl sm:text-3xl font-extrabold text-[#b788f4]">0</span>
-            <div class="w-px h-8 bg-slate-200 shrink-0"></div>
-            <span class="text-slate-500 font-medium text-sm leading-tight">conflictos<br/>en tu semana</span>
+
+          <!-- ── DIVISOR CENTRAL ── -->
+          <div class="absolute inset-y-0 left-[48%] w-px bg-slate-200/80 z-10">
           </div>
-        </div>
+          <div
+            class="absolute top-1/2 left-[48%] -translate-x-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center"
+          >
+            <span class="text-[8px] font-black text-slate-400">VS</span>
+          </div>
 
-        <!-- Widget agenda del día -->
-        <div class="feat-card-widget feat-card-child relative z-10 w-full md:w-80 shrink-0 mt-4 md:mt-0">
-          <div class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white overflow-hidden">
+          <!-- ── LADO DERECHO: DESPUÉS ── -->
+          <div
+            class="absolute inset-y-0 right-0 w-[52%] bg-linear-to-br from-emerald-50/80 to-teal-50/50 flex flex-col p-3 gap-2 overflow-hidden"
+          >
+            <span
+              class="text-[9px] font-extrabold text-[#10b981] uppercase tracking-widest mb-1"
+              >Con Mindesk</span
+            >
 
-            <!-- Header -->
-            <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-white/50">
-              <span class="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Hoy · Jueves</span>
-              <span class="text-xs font-bold text-[#b788f4] bg-[#b788f4]/8 border border-[#b788f4]/20 px-2.5 py-1 rounded-full">4 citas</span>
-            </div>
-
-            <!-- Franjas horarias -->
-            <div class="px-5 py-4 flex flex-col gap-2">
-
-              <div class="agenda-row flex items-center gap-3">
-                <span class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0">9:00</span>
-                <div class="flex-1 h-9 bg-[#b788f4]/12 border border-[#b788f4]/25 rounded-xl flex items-center px-3 gap-2">
-                  <div class="w-2 h-2 rounded-full bg-[#b788f4] shrink-0"></div>
-                  <span class="text-[11px] font-bold text-[#b788f4] truncate">Laura M. · Sesión inicial</span>
+            <!-- Módulos unificados -->
+            <div class="space-y-1.5 mt-0.5">
+              <div
+                class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#10b981]/15"
+              >
+                <div class="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0">
                 </div>
+                <span class="text-[9px] font-bold text-slate-600">Agenda</span>
               </div>
-
-              <div class="agenda-row flex items-center gap-3">
-                <span class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0">10:00</span>
-                <div class="flex-1 h-9 bg-[#10b981]/10 border border-[#10b981]/25 rounded-xl flex items-center px-3 gap-2">
-                  <div class="w-2 h-2 rounded-full bg-[#10b981] shrink-0"></div>
-                  <span class="text-[11px] font-bold text-[#10b981] truncate">Ana García · Seguimiento</span>
+              <div
+                class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#b788f4]/15"
+              >
+                <div class="w-1.5 h-1.5 rounded-full bg-[#b788f4] shrink-0">
                 </div>
+                <span class="text-[9px] font-bold text-slate-600"
+                  >Historial clínico</span
+                >
               </div>
-
-              <div class="agenda-row flex items-center gap-3">
-                <span class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0">11:00</span>
-                <div class="flex-1 h-9 bg-white border border-slate-100 rounded-xl flex items-center px-3 gap-2">
-                  <div class="w-2 h-2 rounded-full bg-slate-200 shrink-0"></div>
-                  <span class="text-[11px] font-medium text-slate-400">Libre</span>
-                  <div class="ml-auto flex items-center gap-1.5">
-                    <svg class="w-3 h-3 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-                    <span class="text-[10px] font-bold text-[#10b981]">Sin conflicto</span>
-                  </div>
+              <div
+                class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#10b981]/15"
+              >
+                <div class="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0">
                 </div>
+                <span class="text-[9px] font-bold text-slate-600"
+                  >Notas de sesión</span
+                >
               </div>
-
-              <div class="agenda-row flex items-center gap-3">
-                <span class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0">12:00</span>
-                <div class="flex-1 h-9 bg-amber-50/80 border border-amber-200/60 rounded-xl flex items-center px-3 gap-2">
-                  <div class="w-2 h-2 rounded-full bg-amber-400 shrink-0"></div>
-                  <span class="text-[11px] font-bold text-amber-600 truncate">Carlos R. · Evaluación</span>
+              <div
+                class="flex items-center gap-2 bg-white/70 rounded-lg px-2.5 py-1.5 border border-[#b788f4]/15"
+              >
+                <div class="w-1.5 h-1.5 rounded-full bg-[#b788f4] shrink-0">
                 </div>
-              </div>
-
-            </div>
-
-            <!-- Footer stats -->
-            <div class="px-5 py-3.5 border-t border-slate-100 bg-slate-50/40 flex items-center justify-between">
-              <span class="text-[10px] font-bold text-slate-400">Ocupación hoy</span>
-              <div class="flex items-center gap-2">
-                <div class="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                  <div class="ocupacion-bar h-full bg-linear-to-r from-[#b788f4] to-[#10b981] rounded-full"></div>
-                </div>
-                <span class="text-[10px] font-extrabold text-[#2D3748]">75%</span>
+                <span class="text-[9px] font-bold text-slate-600"
+                  >Documentos</span
+                >
               </div>
             </div>
 
+            <!-- Resultado -->
+            <div class="mt-1 space-y-1.5">
+              <div
+                class="flex items-center gap-1.5 text-[9px] text-[#10b981] font-bold"
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  ><circle
+                    cx="5"
+                    cy="5"
+                    r="4.5"
+                    stroke="#10b981"
+                    stroke-width="1"></circle><polyline
+                    points="2.5,5 4,6.5 7.5,3"
+                    stroke="#10b981"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></polyline></svg
+                >
+                Todo en uno
+              </div>
+              <div
+                class="flex items-center gap-1.5 text-[9px] text-[#10b981] font-bold"
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  ><circle
+                    cx="5"
+                    cy="5"
+                    r="4.5"
+                    stroke="#10b981"
+                    stroke-width="1"></circle><polyline
+                    points="2.5,5 4,6.5 7.5,3"
+                    stroke="#10b981"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></polyline></svg
+                >
+                Sincronización total
+              </div>
+              <div
+                class="flex items-center gap-1.5 text-[9px] text-[#10b981] font-bold"
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                  ><circle
+                    cx="5"
+                    cy="5"
+                    r="4.5"
+                    stroke="#10b981"
+                    stroke-width="1"></circle><polyline
+                    points="2.5,5 4,6.5 7.5,3"
+                    stroke="#10b981"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></polyline></svg
+                >
+                40 min recuperados
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- ══════════════════════════════════════════════════════ -->
-      <!-- CARD 3 — Tu nube con dos llaves                       -->
-      <!-- ══════════════════════════════════════════════════════ -->
-      <div class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(16,185,129,0.06)] flex flex-col md:flex-row items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-170 md:min-h-0">
-
-        <div class="absolute bottom-0 right-0 w-80 h-80 bg-[#10b981]/6 blur-[100px] rounded-full pointer-events-none"></div>
-        <div class="absolute top-0 left-0 w-56 h-56 bg-[#b788f4]/4 blur-[80px] rounded-full pointer-events-none"></div>
-
-        <!-- Texto -->
-        <div class="feat-card-text flex-1 relative z-10 max-w-lg">
-          <div class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20">
-            03 · Gestión de archivos
-          </div>
-          <h3 class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]">
-            Privacidad blindada. </br> Equipo conectado.
-          </h3>
-          <p class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7">
-            Diferencia tus expedientes confidenciales de los materiales comunes. Protege la privacidad de tus pacientes en tu Zona Privada mientras centralizas recursos, tests y plantillas en la Biblioteca de tu equipo. Todo en su sitio, siempre seguro.
-          </p>
-          <!-- Dos items de propuesta de valor -->
-          <div class="feat-card-child flex flex-col gap-3">
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0">
-                <svg class="w-2.5 h-2.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-              </div>
-              <span class="text-slate-700 font-medium text-sm sm:text-base">Blindaje total para tus expedientes personales.</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0">
-                <svg class="w-2.5 h-2.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-              </div>
-              <span class="text-slate-700 font-medium text-sm sm:text-base">Biblioteca de recursos y materiales compartidos.</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0">
-                <svg class="w-2.5 h-2.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-              </div>
-              <span class="text-slate-700 font-medium text-sm sm:text-base">Sincronización segura en todos tus dispositivos.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Widget dos zonas -->
-        <div class="feat-card-widget feat-card-child relative z-10 w-full md:w-72 shrink-0 flex flex-col gap-4 mt-4 md:mt-0">
-
-          <!-- Zona privada -->
-          <div class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl border border-[#b788f4]/15 p-5">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-9 h-9 rounded-xl bg-[#b788f4]/10 border border-[#b788f4]/20 flex items-center justify-center">
-                <svg width="15" height="13" viewBox="0 0 15 13" fill="none">
-                  <path d="M0 3Q0 1.5 1.5 1.5L5.5 1.5L7 3.5H13.5Q15 3.5 15 5V11.5Q15 13 13.5 13H1.5Q0 13 0 11.5Z" fill="#b788f4" opacity="0.55"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-[10px] font-extrabold text-[#b788f4] uppercase tracking-widest">Zona Privada</div>
-                <div class="text-xs text-slate-400 font-medium">Acceso exclusivo</div>
-              </div>
-              <div class="ml-auto">
-                <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
-                  <path d="M4 7V5A3 3 0 0 1 10 5V7" stroke="#b788f4" stroke-width="1.5" stroke-linecap="round"/>
-                  <rect x="1.5" y="7" width="11" height="9" rx="2.5" fill="#b788f4" opacity="0.12" stroke="#b788f4" stroke-width="1.4"/>
-                  <circle cx="7" cy="11.5" r="1.2" fill="#b788f4"/>
-                </svg>
-              </div>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-2.5 bg-[#b788f4]/5 rounded-xl px-3 py-2.5 border border-[#b788f4]/10">
-                <div class="w-1.5 h-5 bg-[#b788f4]/35 rounded-full"></div>
-                <div class="flex-1 space-y-1">
-                  <div class="h-1.5 w-full bg-[#b788f4]/20 rounded-full"></div>
-                  <div class="h-1.5 w-3/4 bg-[#b788f4]/12 rounded-full"></div>
-                </div>
-              </div>
-              <div class="flex items-center gap-2.5 bg-[#b788f4]/5 rounded-xl px-3 py-2.5 border border-[#b788f4]/10">
-                <div class="w-1.5 h-5 bg-[#b788f4]/35 rounded-full"></div>
-                <div class="flex-1 space-y-1">
-                  <div class="h-1.5 w-5/6 bg-[#b788f4]/20 rounded-full"></div>
-                  <div class="h-1.5 w-2/3 bg-[#b788f4]/12 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Divisor -->
-          <div class="flex items-center gap-3">
-            <div class="flex-1 h-px bg-slate-200/70"></div>
-            <span class="text-[10px] font-extrabold text-slate-300 uppercase tracking-widest">también</span>
-            <div class="flex-1 h-px bg-slate-200/70"></div>
-          </div>
-
-          <!-- Biblioteca -->
-          <div class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl border border-[#10b981]/15 p-5">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-9 h-9 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center">
-                <svg width="15" height="13" viewBox="0 0 15 13" fill="none">
-                  <path d="M0 3Q0 1.5 1.5 1.5L5.5 1.5L7 3.5H13.5Q15 3.5 15 5V11.5Q15 13 13.5 13H1.5Q0 13 0 11.5Z" fill="#10b981" opacity="0.55"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-[10px] font-extrabold text-[#10b981] uppercase tracking-widest">Biblioteca</div>
-                <div class="text-xs text-slate-400 font-medium">Todo el equipo</div>
-              </div>
-              <div class="ml-auto flex -space-x-1.5">
-                <div class="w-6 h-6 rounded-full bg-[#b788f4]/15 border-2 border-white flex items-center justify-center text-[9px] font-extrabold text-[#b788f4]">L</div>
-                <div class="w-6 h-6 rounded-full bg-[#10b981]/15 border-2 border-white flex items-center justify-center text-[9px] font-extrabold text-[#10b981]">M</div>
-                <div class="w-6 h-6 rounded-full bg-amber-100 border-2 border-white flex items-center justify-center text-[9px] font-extrabold text-amber-600">C</div>
-              </div>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-2.5 bg-[#10b981]/5 rounded-xl px-3 py-2.5 border border-[#10b981]/10">
-                <div class="w-1.5 h-5 bg-[#10b981]/35 rounded-full"></div>
-                <div class="flex-1 space-y-1">
-                  <div class="h-1.5 w-full bg-[#10b981]/20 rounded-full"></div>
-                  <div class="h-1.5 w-4/5 bg-[#10b981]/12 rounded-full"></div>
-                </div>
-              </div>
-              <div class="flex items-center gap-2.5 bg-[#10b981]/5 rounded-xl px-3 py-2.5 border border-[#10b981]/10">
-                <div class="w-1.5 h-5 bg-[#10b981]/35 rounded-full"></div>
-                <div class="flex-1 space-y-1">
-                  <div class="h-1.5 w-3/4 bg-[#10b981]/20 rounded-full"></div>
-                  <div class="h-1.5 w-1/2 bg-[#10b981]/12 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- CARD 2 — Agenda sin conflictos                        -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <div
+      class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(183,136,244,0.08)] flex flex-col md:flex-row-reverse items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-150 md:min-h-0"
+    >
+      <div
+        class="absolute top-0 left-0 w-80 h-80 bg-[#b788f4]/6 blur-[100px] rounded-full pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-0 w-56 h-56 bg-[#10b981]/4 blur-[80px] rounded-full pointer-events-none"
+      >
       </div>
 
-      <!-- ══════════════════════════════════════════════════════ -->
-      <!-- CARD 4 — RGPD de serie                               -->
-      <!-- ══════════════════════════════════════════════════════ -->
-      <div class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(16,185,129,0.08)] flex flex-col md:flex-row-reverse items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-155 md:min-h-0">
-
-        <div class="absolute top-0 right-0 w-96 h-96 bg-[#10b981]/6 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#b788f4]/4 blur-[100px] rounded-full pointer-events-none"></div>
-
-        <!-- Texto -->
-        <div class="feat-card-text flex-1 relative z-10 max-w-lg">
-          <div class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20">
-            04 · Cumplimiento legal
-          </div>
-          <h3 class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]">
-            Blindaje legal desde </br> el primer clic.
-          </h3>
-          <p class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7">
-            Olvida la burocracia técnica. Mindesk incorpora encriptación de grado médico y servidores en la Unión Europea para que cumplas la ley sin mover un dedo. Seguridad real para la información más sensible de tu negocio.
-          </p>
-          <div class="feat-card-child flex flex-col gap-3">
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0">
-                <svg class="w-2.5 h-2.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-              </div>
-              <span class="text-slate-700 font-medium text-sm sm:text-base">Tus datos, siempre protegidos y bajo llave.</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0">
-                <svg class="w-2.5 h-2.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-              </div>
-              <span class="text-slate-700 font-medium text-sm sm:text-base">Toda tu información se queda en Europa.</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0">
-                <svg class="w-2.5 h-2.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3.5,6.5 9,1"/></svg>
-              </div>
-              <span class="text-slate-700 font-medium text-sm sm:text-base">Todo listo para superar cualquier inspección.</span>
-            </div>
-          </div>
+      <!-- Texto -->
+      <div class="feat-card-text flex-1 relative z-10 max-w-lg">
+        <div
+          class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20"
+        >
+          02 · Agenda inteligente
         </div>
-
-        <!-- Widget: RGPD visual -->
-        <div class="feat-card-widget feat-card-child relative z-10 w-full md:w-80 shrink-0 mt-4 md:mt-0">
-          <div class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/80 overflow-hidden p-8">
-            
-            <!-- Escudo completo con documentos protegidos -->
-            <div class="relative w-full h-48 flex items-center justify-center">
-              
-              <!-- Glow de fondo verde -->
-              <div class="absolute inset-0 bg-[#10b981]/10 blur-2xl rounded-full"></div>
-              
-              <!-- Escudo principal -->
-              <div class="relative">
-                <svg width="140" height="155" viewBox="0 0 140 155" fill="none" class="relative z-10">
-                  <!-- Escudo base sólido -->
-                  <path d="M70 5 L130 25 L130 70 C130 105 100 135 70 150 C40 135 10 105 10 70 L10 25 Z" 
-                        fill="#d1fae5" stroke="#10b981" stroke-width="4" stroke-linejoin="round"/>
-                  
-                  <!-- Documentos protegidos dentro -->
-                  <g transform="translate(45, 40)">
-                    <!-- Doc 1 -->
-                    <rect x="0" y="0" width="22" height="28" rx="2" fill="white" stroke="#10b981" stroke-width="1.5"/>
-                    <rect x="3" y="4" width="10" height="1.5" rx="0.75" fill="#10b981" opacity="0.4"/>
-                    <rect x="3" y="8" width="14" height="1.5" rx="0.75" fill="#10b981" opacity="0.3"/>
-                    <rect x="3" y="12" width="12" height="1.5" rx="0.75" fill="#10b981" opacity="0.3"/>
-                    
-                    <!-- Doc 2 (overlapping) -->
-                    <rect x="12" y="8" width="22" height="28" rx="2" fill="white" stroke="#10b981" stroke-width="1.5"/>
-                    <rect x="15" y="12" width="10" height="1.5" rx="0.75" fill="#10b981" opacity="0.4"/>
-                    <rect x="15" y="16" width="14" height="1.5" rx="0.75" fill="#10b981" opacity="0.3"/>
-                    <rect x="15" y="20" width="12" height="1.5" rx="0.75" fill="#10b981" opacity="0.3"/>
-                    
-                    <!-- Doc 3 (overlapping) -->
-                    <rect x="24" y="16" width="22" height="28" rx="2" fill="white" stroke="#10b981" stroke-width="1.5"/>
-                    <rect x="27" y="20" width="10" height="1.5" rx="0.75" fill="#10b981" opacity="0.4"/>
-                    <rect x="27" y="24" width="14" height="1.5" rx="0.75" fill="#10b981" opacity="0.3"/>
-                    <rect x="27" y="28" width="12" height="1.5" rx="0.75" fill="#10b981" opacity="0.3"/>
-                  </g>
-                  
-                  <!-- Candado superior -->
-                  <g transform="translate(60, 15)">
-                    <rect x="5" y="8" width="10" height="8" rx="2" fill="#10b981"/>
-                    <path d="M7 8 L7 5 C7 3.3 8.3 2 10 2 C11.7 2 13 3.3 13 5 L13 8" 
-                          stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round"/>
-                    <circle cx="10" cy="12" r="1.5" fill="white"/>
-                  </g>
-                  
-                  <!-- Checkmark grande -->
-                  <path d="M50 95 L62 107 L90 75" stroke="#10b981" stroke-width="6" 
-                        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                </svg>
-              </div>
-
-              <!-- Badge RGPD flotante -->
-              <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-4 py-2.5 rounded-full border-2 border-[#10b981] shadow-lg flex items-center gap-2">
-                <div class="flex -space-x-1">
-                  <div class="w-4 h-4 rounded-full bg-[#003399] border border-white flex items-center justify-center">
-                    <span class="text-[6px] text-yellow-300">★</span>
-                  </div>
-                  <div class="w-4 h-4 rounded-full bg-[#003399] border border-white flex items-center justify-center">
-                    <span class="text-[6px] text-yellow-300">★</span>
-                  </div>
-                </div>
-                <span class="text-xs font-bold text-[#10b981] uppercase tracking-wider">RGPD</span>
-                <svg class="w-3.5 h-3.5 text-[#10b981]" viewBox="0 0 10 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="1,4 3.5,6.5 9,1"/>
-                </svg>
-              </div>
-            </div>
-            
-            
-            
-          </div>
-        </div>
-
+        <h3
+          class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]"
+        >
+          Agendas perfectas.
+        </h3> Cero conflictos.
       </div>
+      <p
+        class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7"
+      >
+        Olvídate del estrés de los solapamientos. El sistema detecta conflictos
+        antes de que ocurran y te ayuda a reorganizar cancelaciones en segundos.
+        Un gabinete en orden es un equipo que trabaja tranquilo.
+      </p>
+      <div
+        class="feat-card-child inline-flex items-center gap-3 sm:gap-4 bg-white/60 border border-white rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-sm backdrop-blur-sm"
+      >
+        <span
+          class="stat-value text-2xl sm:text-3xl font-extrabold text-[#b788f4]"
+          >0</span
+        >
+        <div class="w-px h-8 bg-slate-200 shrink-0"></div>
+        <span class="text-slate-500 font-medium text-sm leading-tight"
+          >conflictos<br />en tu semana</span
+        >
+      </div>
+    </div>
 
+    <!-- Widget agenda del día -->
+    <div
+      class="feat-card-widget feat-card-child relative z-10 w-full md:w-80 shrink-0 mt-4 md:mt-0"
+    >
+      <div
+        class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white overflow-hidden"
+      >
+        <!-- Header -->
+        <div
+          class="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-white/50"
+        >
+          <span
+            class="text-xs font-extrabold text-slate-400 uppercase tracking-widest"
+            >Hoy · Jueves</span
+          >
+          <span
+            class="text-xs font-bold text-[#b788f4] bg-[#b788f4]/8 border border-[#b788f4]/20 px-2.5 py-1 rounded-full"
+            >4 citas</span
+          >
+        </div>
+
+        <!-- Franjas horarias -->
+        <div class="px-5 py-4 flex flex-col gap-2">
+          <div class="agenda-row flex items-center gap-3">
+            <span
+              class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0"
+              >9:00</span
+            >
+            <div
+              class="flex-1 h-9 bg-[#b788f4]/12 border border-[#b788f4]/25 rounded-xl flex items-center px-3 gap-2"
+            >
+              <div class="w-2 h-2 rounded-full bg-[#b788f4] shrink-0"></div>
+              <span class="text-[11px] font-bold text-[#b788f4] truncate"
+                >Laura M. · Sesión inicial</span
+              >
+            </div>
+          </div>
+
+          <div class="agenda-row flex items-center gap-3">
+            <span
+              class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0"
+              >10:00</span
+            >
+            <div
+              class="flex-1 h-9 bg-[#10b981]/10 border border-[#10b981]/25 rounded-xl flex items-center px-3 gap-2"
+            >
+              <div class="w-2 h-2 rounded-full bg-[#10b981] shrink-0"></div>
+              <span class="text-[11px] font-bold text-[#10b981] truncate"
+                >Ana García · Seguimiento</span
+              >
+            </div>
+          </div>
+
+          <div class="agenda-row flex items-center gap-3">
+            <span
+              class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0"
+              >11:00</span
+            >
+            <div
+              class="flex-1 h-9 bg-white border border-slate-100 rounded-xl flex items-center px-3 gap-2"
+            >
+              <div class="w-2 h-2 rounded-full bg-slate-200 shrink-0"></div>
+              <span class="text-[11px] font-medium text-slate-400">Libre</span>
+              <div class="ml-auto flex items-center gap-1.5">
+                <svg
+                  class="w-3 h-3 text-[#10b981]"
+                  viewBox="0 0 10 8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+                >
+                <span class="text-[10px] font-bold text-[#10b981]"
+                  >Sin conflicto</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="agenda-row flex items-center gap-3">
+            <span
+              class="text-[10px] font-bold text-slate-300 w-10 text-right shrink-0"
+              >12:00</span
+            >
+            <div
+              class="flex-1 h-9 bg-amber-50/80 border border-amber-200/60 rounded-xl flex items-center px-3 gap-2"
+            >
+              <div class="w-2 h-2 rounded-full bg-amber-400 shrink-0"></div>
+              <span class="text-[11px] font-bold text-amber-600 truncate"
+                >Carlos R. · Evaluación</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer stats -->
+        <div
+          class="px-5 py-3.5 border-t border-slate-100 bg-slate-50/40 flex items-center justify-between"
+        >
+          <span class="text-[10px] font-bold text-slate-400">Ocupación hoy</span
+          >
+          <div class="flex items-center gap-2">
+            <div class="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div
+                class="ocupacion-bar h-full bg-linear-to-r from-[#b788f4] to-[#10b981] rounded-full"
+              >
+              </div>
+            </div>
+            <span class="text-[10px] font-extrabold text-[#2D3748]">75%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- CARD 3 — Tu nube con dos llaves                       -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div
+    class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(16,185,129,0.06)] flex flex-col md:flex-row items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-170 md:min-h-0"
+  >
+    <div
+      class="absolute bottom-0 right-0 w-80 h-80 bg-[#10b981]/6 blur-[100px] rounded-full pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute top-0 left-0 w-56 h-56 bg-[#b788f4]/4 blur-[80px] rounded-full pointer-events-none"
+    >
+    </div>
+
+    <!-- Texto -->
+    <div class="feat-card-text flex-1 relative z-10 max-w-lg">
+      <div
+        class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20"
+      >
+        03 · Gestión de archivos
+      </div>
+      <h3
+        class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]"
+      >
+        Privacidad blindada.
+      </h3> Equipo conectado.
+    </div>
+    <p
+      class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7"
+    >
+      Diferencia tus expedientes confidenciales de los materiales comunes.
+      Protege la privacidad de tus pacientes en tu Zona Privada mientras
+      centralizas recursos, tests y plantillas en la Biblioteca de tu equipo.
+      Todo en su sitio, siempre seguro.
+    </p>
+    <!-- Dos items de propuesta de valor -->
+    <div class="feat-card-child flex flex-col gap-3">
+      <div class="flex items-center gap-3">
+        <div
+          class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+        >
+          <svg
+            class="w-2.5 h-2.5 text-[#10b981]"
+            viewBox="0 0 10 8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+          >
+        </div>
+        <span class="text-slate-700 font-medium text-sm sm:text-base"
+          >Blindaje total para tus expedientes personales.</span
+        >
+      </div>
+      <div class="flex items-center gap-3">
+        <div
+          class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+        >
+          <svg
+            class="w-2.5 h-2.5 text-[#10b981]"
+            viewBox="0 0 10 8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+          >
+        </div>
+        <span class="text-slate-700 font-medium text-sm sm:text-base"
+          >Biblioteca de recursos y materiales compartidos.</span
+        >
+      </div>
+      <div class="flex items-center gap-3">
+        <div
+          class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+        >
+          <svg
+            class="w-2.5 h-2.5 text-[#10b981]"
+            viewBox="0 0 10 8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+          >
+        </div>
+        <span class="text-slate-700 font-medium text-sm sm:text-base"
+          >Sincronización segura en todos tus dispositivos.</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Widget dos zonas -->
+  <div
+    class="feat-card-widget feat-card-child relative z-10 w-full md:w-72 shrink-0 flex flex-col gap-4 mt-4 md:mt-0"
+  >
+    <!-- Zona privada -->
+    <div
+      class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl border border-[#b788f4]/15 p-5"
+    >
+      <div class="flex items-center gap-3 mb-4">
+        <div
+          class="w-9 h-9 rounded-xl bg-[#b788f4]/10 border border-[#b788f4]/20 flex items-center justify-center"
+        >
+          <svg width="15" height="13" viewBox="0 0 15 13" fill="none">
+            <path
+              d="M0 3Q0 1.5 1.5 1.5L5.5 1.5L7 3.5H13.5Q15 3.5 15 5V11.5Q15 13 13.5 13H1.5Q0 13 0 11.5Z"
+              fill="#b788f4"
+              opacity="0.55"></path>
+          </svg>
+        </div>
+        <div>
+          <div
+            class="text-[10px] font-extrabold text-[#b788f4] uppercase tracking-widest"
+          >
+            Zona Privada
+          </div>
+          <div class="text-xs text-slate-400 font-medium">Acceso exclusivo</div>
+        </div>
+        <div class="ml-auto">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
+            <path
+              d="M4 7V5A3 3 0 0 1 10 5V7"
+              stroke="#b788f4"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <rect
+              x="1.5"
+              y="7"
+              width="11"
+              height="9"
+              rx="2.5"
+              fill="#b788f4"
+              opacity="0.12"
+              stroke="#b788f4"
+              stroke-width="1.4"></rect>
+            <circle cx="7" cy="11.5" r="1.2" fill="#b788f4"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div
+          class="flex items-center gap-2.5 bg-[#b788f4]/5 rounded-xl px-3 py-2.5 border border-[#b788f4]/10"
+        >
+          <div class="w-1.5 h-5 bg-[#b788f4]/35 rounded-full"></div>
+          <div class="flex-1 space-y-1">
+            <div class="h-1.5 w-full bg-[#b788f4]/20 rounded-full"></div>
+            <div class="h-1.5 w-3/4 bg-[#b788f4]/12 rounded-full"></div>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2.5 bg-[#b788f4]/5 rounded-xl px-3 py-2.5 border border-[#b788f4]/10"
+        >
+          <div class="w-1.5 h-5 bg-[#b788f4]/35 rounded-full"></div>
+          <div class="flex-1 space-y-1">
+            <div class="h-1.5 w-5/6 bg-[#b788f4]/20 rounded-full"></div>
+            <div class="h-1.5 w-2/3 bg-[#b788f4]/12 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divisor -->
+    <div class="flex items-center gap-3">
+      <div class="flex-1 h-px bg-slate-200/70"></div>
+      <span
+        class="text-[10px] font-extrabold text-slate-300 uppercase tracking-widest"
+        >también</span
+      >
+      <div class="flex-1 h-px bg-slate-200/70"></div>
+    </div>
+
+    <!-- Biblioteca -->
+    <div
+      class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl border border-[#10b981]/15 p-5"
+    >
+      <div class="flex items-center gap-3 mb-4">
+        <div
+          class="w-9 h-9 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center"
+        >
+          <svg width="15" height="13" viewBox="0 0 15 13" fill="none">
+            <path
+              d="M0 3Q0 1.5 1.5 1.5L5.5 1.5L7 3.5H13.5Q15 3.5 15 5V11.5Q15 13 13.5 13H1.5Q0 13 0 11.5Z"
+              fill="#10b981"
+              opacity="0.55"></path>
+          </svg>
+        </div>
+        <div>
+          <div
+            class="text-[10px] font-extrabold text-[#10b981] uppercase tracking-widest"
+          >
+            Biblioteca
+          </div>
+          <div class="text-xs text-slate-400 font-medium">Todo el equipo</div>
+        </div>
+        <div class="ml-auto flex -space-x-1.5">
+          <div
+            class="w-6 h-6 rounded-full bg-[#b788f4]/15 border-2 border-white flex items-center justify-center text-[9px] font-extrabold text-[#b788f4]"
+          >
+            L
+          </div>
+          <div
+            class="w-6 h-6 rounded-full bg-[#10b981]/15 border-2 border-white flex items-center justify-center text-[9px] font-extrabold text-[#10b981]"
+          >
+            M
+          </div>
+          <div
+            class="w-6 h-6 rounded-full bg-amber-100 border-2 border-white flex items-center justify-center text-[9px] font-extrabold text-amber-600"
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div
+          class="flex items-center gap-2.5 bg-[#10b981]/5 rounded-xl px-3 py-2.5 border border-[#10b981]/10"
+        >
+          <div class="w-1.5 h-5 bg-[#10b981]/35 rounded-full"></div>
+          <div class="flex-1 space-y-1">
+            <div class="h-1.5 w-full bg-[#10b981]/20 rounded-full"></div>
+            <div class="h-1.5 w-4/5 bg-[#10b981]/12 rounded-full"></div>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2.5 bg-[#10b981]/5 rounded-xl px-3 py-2.5 border border-[#10b981]/10"
+        >
+          <div class="w-1.5 h-5 bg-[#10b981]/35 rounded-full"></div>
+          <div class="flex-1 space-y-1">
+            <div class="h-1.5 w-3/4 bg-[#10b981]/20 rounded-full"></div>
+            <div class="h-1.5 w-1/2 bg-[#10b981]/12 rounded-full"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CARD 4 — RGPD de serie                               -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div
+  class="feat-scroll-card relative rounded-[2.5rem] bg-linear-to-br from-white/55 to-white/15 backdrop-blur-2xl border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_16px_48px_rgba(16,185,129,0.08)] flex flex-col md:flex-row-reverse items-center p-5 sm:p-8 md:p-12 gap-12 sm:gap-12 md:gap-20 min-h-155 md:min-h-0"
+>
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-[#10b981]/6 blur-[120px] rounded-full pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 left-0 w-72 h-72 bg-[#b788f4]/4 blur-[100px] rounded-full pointer-events-none"
+  >
+  </div>
+
+  <!-- Texto -->
+  <div class="feat-card-text flex-1 relative z-10 max-w-lg">
+    <div
+      class="feat-card-child inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-7 border border-[#10b981]/20"
+    >
+      04 · Cumplimiento legal
+    </div>
+    <h3
+      class="feat-card-child text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D3748] tracking-tight mb-3 sm:mb-4 leading-[1.15]"
+    >
+      Blindaje legal desde
+    </h3> el primer clic.
+  </div>
+  <p
+    class="feat-card-child text-slate-600 font-medium leading-relaxed text-base md:text-lg mb-5 sm:mb-7"
+  >
+    Olvida la burocracia técnica. Mindesk incorpora encriptación de grado médico
+    y servidores en la Unión Europea para que cumplas la ley sin mover un dedo.
+    Seguridad real para la información más sensible de tu negocio.
+  </p>
+  <div class="feat-card-child flex flex-col gap-3">
+    <div class="flex items-center gap-3">
+      <div
+        class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="w-2.5 h-2.5 text-[#10b981]"
+          viewBox="0 0 10 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+        >
+      </div>
+      <span class="text-slate-700 font-medium text-sm sm:text-base"
+        >Tus datos, siempre protegidos y bajo llave.</span
+      >
+    </div>
+    <div class="flex items-center gap-3">
+      <div
+        class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="w-2.5 h-2.5 text-[#10b981]"
+          viewBox="0 0 10 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+        >
+      </div>
+      <span class="text-slate-700 font-medium text-sm sm:text-base"
+        >Toda tu información se queda en Europa.</span
+      >
+    </div>
+    <div class="flex items-center gap-3">
+      <div
+        class="w-5 h-5 rounded-full bg-[#10b981]/10 border border-[#10b981]/25 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="w-2.5 h-2.5 text-[#10b981]"
+          viewBox="0 0 10 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="1,4 3.5,6.5 9,1"></polyline></svg
+        >
+      </div>
+      <span class="text-slate-700 font-medium text-sm sm:text-base"
+        >Todo listo para superar cualquier inspección.</span
+      >
+    </div>
+  </div>
+</div>
+
+<!-- Widget: RGPD visual -->
+<div
+  class="feat-card-widget feat-card-child relative z-10 w-full md:w-80 shrink-0 mt-4 md:mt-0"
+>
+  <div
+    class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/80 overflow-hidden p-8"
+  >
+    <!-- Escudo completo con documentos protegidos -->
+    <div class="relative w-full h-48 flex items-center justify-center">
+      <!-- Glow de fondo verde -->
+      <div class="absolute inset-0 bg-[#10b981]/10 blur-2xl rounded-full"></div>
+
+      <!-- Escudo principal -->
+      <div class="relative">
+        <svg
+          width="140"
+          height="155"
+          viewBox="0 0 140 155"
+          fill="none"
+          class="relative z-10"
+        >
+          <!-- Escudo base sólido -->
+          <path
+            d="M70 5 L130 25 L130 70 C130 105 100 135 70 150 C40 135 10 105 10 70 L10 25 Z"
+            fill="#d1fae5"
+            stroke="#10b981"
+            stroke-width="4"
+            stroke-linejoin="round"></path>
+
+          <!-- Documentos protegidos dentro -->
+          <g transform="translate(45, 40)">
+            <!-- Doc 1 -->
+            <rect
+              x="0"
+              y="0"
+              width="22"
+              height="28"
+              rx="2"
+              fill="white"
+              stroke="#10b981"
+              stroke-width="1.5"></rect>
+            <rect
+              x="3"
+              y="4"
+              width="10"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.4"></rect>
+            <rect
+              x="3"
+              y="8"
+              width="14"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.3"></rect>
+            <rect
+              x="3"
+              y="12"
+              width="12"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.3"></rect>
+
+            <!-- Doc 2 (overlapping) -->
+            <rect
+              x="12"
+              y="8"
+              width="22"
+              height="28"
+              rx="2"
+              fill="white"
+              stroke="#10b981"
+              stroke-width="1.5"></rect>
+            <rect
+              x="15"
+              y="12"
+              width="10"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.4"></rect>
+            <rect
+              x="15"
+              y="16"
+              width="14"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.3"></rect>
+            <rect
+              x="15"
+              y="20"
+              width="12"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.3"></rect>
+
+            <!-- Doc 3 (overlapping) -->
+            <rect
+              x="24"
+              y="16"
+              width="22"
+              height="28"
+              rx="2"
+              fill="white"
+              stroke="#10b981"
+              stroke-width="1.5"></rect>
+            <rect
+              x="27"
+              y="20"
+              width="10"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.4"></rect>
+            <rect
+              x="27"
+              y="24"
+              width="14"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.3"></rect>
+            <rect
+              x="27"
+              y="28"
+              width="12"
+              height="1.5"
+              rx="0.75"
+              fill="#10b981"
+              opacity="0.3"></rect>
+          </g>
+
+          <!-- Candado superior -->
+          <g transform="translate(60, 15)">
+            <rect x="5" y="8" width="10" height="8" rx="2" fill="#10b981"
+            ></rect>
+            <path
+              d="M7 8 L7 5 C7 3.3 8.3 2 10 2 C11.7 2 13 3.3 13 5 L13 8"
+              stroke="#10b981"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"></path>
+            <circle cx="10" cy="12" r="1.5" fill="white"></circle>
+          </g>
+
+          <!-- Checkmark grande -->
+          <path
+            d="M50 95 L62 107 L90 75"
+            stroke="#10b981"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"></path>
+        </svg>
+      </div>
+
+      <!-- Badge RGPD flotante -->
+      <div
+        class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-4 py-2.5 rounded-full border-2 border-[#10b981] shadow-lg flex items-center gap-2"
+      >
+        <div class="flex -space-x-1">
+          <div
+            class="w-4 h-4 rounded-full bg-[#003399] border border-white flex items-center justify-center"
+          >
+            <span class="text-[6px] text-yellow-300">★</span>
+          </div>
+          <div
+            class="w-4 h-4 rounded-full bg-[#003399] border border-white flex items-center justify-center"
+          >
+            <span class="text-[6px] text-yellow-300">★</span>
+          </div>
+        </div>
+        <span class="text-xs font-bold text-[#10b981] uppercase tracking-wider"
+          >RGPD</span
+        >
+        <svg
+          class="w-3.5 h-3.5 text-[#10b981]"
+          viewBox="0 0 10 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="1,4 3.5,6.5 9,1"></polyline>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- GSAP + ScrollTrigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" is:inline></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" is:inline></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  defer
+  is:inline></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+  defer
+  is:inline></script>
 
 <script is:inline>
-function initFeaturesAnimations() {
-  // Asegurarnos de que GSAP esté disponible
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  function initFeaturesAnimations() {
+    // Asegurarnos de que GSAP esté disponible
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined")
+      return;
 
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // ¡Vital para Astro! Limpiar los triggers fantasmas de la página anterior
-  ScrollTrigger.getAll().forEach(t => t.kill());
+    gsap.registerPlugin(ScrollTrigger);
 
-  /* ─── Perspectiva global ─── */
-  gsap.set('#featCardsContainer', { perspective: 1200 });
+    // ¡Vital para Astro! Limpiar los triggers fantasmas de la página anterior
+    ScrollTrigger.getAll().forEach((t) => t.kill());
 
-  const cards = gsap.utils.toArray('.feat-scroll-card');
-  cards.forEach(function(card, i) {
-    const widgets = card.querySelectorAll('.feat-card-widget');
+    /* ─── Perspectiva global ─── */
+    gsap.set("#featCardsContainer", { perspective: 1200 });
 
-    /* ── Estado inicial: texto con y-offset, widgets solo opacity ── */
-    const textCols = card.querySelector('.feat-card-text');
-    if (textCols) {
-      const nodes = textCols.querySelectorAll('.feat-card-child');
-      gsap.set(nodes, { opacity: 0, y: 16 });
-    }
-    gsap.set(widgets, { opacity: 0, y: 0 });
+    const cards = gsap.utils.toArray(".feat-scroll-card");
+    cards.forEach(function (card, i) {
+      const widgets = card.querySelectorAll(".feat-card-widget");
 
-    /* ── Timeline de entrada de la card ── */
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: card,
-        start: 'top 82%',
-        end: 'top 30%',
-        toggleActions: 'play none none none',
+      /* ── Estado inicial: texto con y-offset, widgets solo opacity ── */
+      const textCols = card.querySelector(".feat-card-text");
+      if (textCols) {
+        const nodes = textCols.querySelectorAll(".feat-card-child");
+        gsap.set(nodes, { opacity: 0, y: 16 });
       }
-    });
+      gsap.set(widgets, { opacity: 0, y: 0 });
 
-    /* 1. La card entra con efecto 3D + muelle */
-    const isMobile = window.innerWidth < 768;
-    tl.fromTo(card,
-      { opacity: 0, y: isMobile ? 0 : 90, rotationX: isMobile ? 0 : 14, scale: 0.96, transformOrigin: 'center top' },
-      { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 1.1, ease: 'expo.out' }
-    );
+      /* ── Timeline de entrada de la card ── */
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: "top 82%",
+          end: "top 30%",
+          toggleActions: "play none none none",
+        },
+      });
 
-    /* 2. Hijos de texto en stagger con y */
-    const textChildNodes = textCols ? textCols.querySelectorAll('.feat-card-child') : [];
-    if (textChildNodes.length) {
-      tl.to(textChildNodes,
-        { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out', stagger: 0.11 },
-        '-=0.65'
+      /* 1. La card entra con efecto 3D + muelle */
+      const isMobile = window.innerWidth < 768;
+      tl.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: isMobile ? 0 : 90,
+          rotationX: isMobile ? 0 : 14,
+          scale: 0.96,
+          transformOrigin: "center top",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          scale: 1,
+          duration: 1.1,
+          ease: "expo.out",
+        },
       );
-    }
 
-    /* 3. Widgets: solo fade, sin y — aparecen cuando termina el texto */
-    tl.to(widgets, { opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.3');
-  });
-}
+      /* 2. Hijos de texto en stagger con y */
+      const textChildNodes = textCols
+        ? textCols.querySelectorAll(".feat-card-child")
+        : [];
+      if (textChildNodes.length) {
+        tl.to(
+          textChildNodes,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            ease: "power3.out",
+            stagger: 0.11,
+          },
+          "-=0.65",
+        );
+      }
 
-// MAGIA DE ASTRO: Ejecutar al cargar la página por primera vez y al navegar entre páginas
-document.addEventListener('astro:page-load', initFeaturesAnimations);
-// Fallback de seguridad
-document.addEventListener('DOMContentLoaded', initFeaturesAnimations);
+      /* 3. Widgets: solo fade, sin y — aparecen cuando termina el texto */
+      tl.to(
+        widgets,
+        { opacity: 1, duration: 0.5, ease: "power2.out" },
+        "-=0.3",
+      );
+    });
+  }
+
+  // MAGIA DE ASTRO: Ejecutar al cargar la página por primera vez y al navegar entre páginas
+  document.addEventListener("astro:page-load", initFeaturesAnimations);
+  // Fallback de seguridad
+  document.addEventListener("DOMContentLoaded", initFeaturesAnimations);
 </script>

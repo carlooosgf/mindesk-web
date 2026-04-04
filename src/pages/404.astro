@@ -1,35 +1,47 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Página no encontrada | Mindesk">
-    
-    <section class="min-h-[calc(100vh-80px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-brand-bg/50">
-        
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-bold text-[15rem] md:text-[25rem] text-brand-primary/5 leading-none select-none pointer-events-none z-0">
+<Layout
+    title="Página no encontrada | Mindesk"
+    description="La página que buscas no existe o ha sido movida. Vuelve al inicio de Mindesk."
+    noindex={true}
+>
+    <section
+        class="min-h-[calc(100vh-80px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-brand-bg/50"
+    >
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-bold text-[15rem] md:text-[25rem] text-brand-primary/5 leading-none select-none pointer-events-none z-0"
+        >
             404
         </div>
-        
-        <div class="relative z-10 bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-4xl shadow-xl shadow-brand-primary/5 text-center max-w-2xl w-full border border-white/50">
-            
+
+        <div
+            class="relative z-10 bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-4xl shadow-xl shadow-brand-primary/5 text-center max-w-2xl w-full border border-white/50"
+        >
             <div class="space-y-6">
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-serif font-medium text-brand-text mb-4">
+                    <h1
+                        class="text-4xl md:text-5xl font-serif font-medium text-brand-text mb-4"
+                    >
                         Ups, página no encontrada.
                     </h1>
                     <p class="text-slate-600 text-lg leading-relaxed">
-                        Parece que la página que buscas se ha movido, no existe o la dirección es incorrecta. No te preocupes, es fácil volver al camino correcto.
+                        Parece que la página que buscas se ha movido, no existe
+                        o la dirección es incorrecta. No te preocupes, es fácil
+                        volver al camino correcto.
                     </p>
                 </div>
 
                 <div class="pt-4">
-                    <a href="/" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-primary text-white font-bold tracking-wide hover:bg-brand-text transition-all duration-300 shadow-lg shadow-brand-primary/20 hover:scale-105">
+                    <a
+                        href="/"
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-primary text-white font-bold tracking-wide hover:bg-brand-text transition-all duration-300 shadow-lg shadow-brand-primary/20 hover:scale-105"
+                    >
                         Volver al Inicio
                     </a>
                 </div>
             </div>
-
         </div>
     </section>
-
 </Layout>

@@ -1,8 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const seoTitle =
+  "Política de Privacidad | Mindesk - Software de Gestión Clínica";
+const seoDescription =
+  "Política de privacidad de Mindesk: cómo tratamos tus datos, finalidades del tratamiento, legitimación RGPD, destinatarios, uso de cookies analíticas y tus derechos. Responsable: Carlos González Fernández.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://www.mindesk.es/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Política de Privacidad",
+      item: "https://www.mindesk.es/privacidad/",
+    },
+  ],
+};
 ---
 
-<Layout title="Política de Privacidad | Mindesk">
+<Layout title={seoTitle} description={seoDescription}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <section
     class="relative min-h-[calc(100vh-80px)] py-20 px-4 sm:px-6 flex items-center justify-center font-sans overflow-hidden z-10"
   >
@@ -66,7 +92,8 @@ import Layout from "../layouts/Layout.astro";
               <a
                 href="mailto:info@mindesk.es"
                 class="text-[#10b981] hover:underline transition-all"
-                >info@mindesk.es</a>
+                >info@mindesk.es</a
+              >
             </p>
           </div>
         </section>

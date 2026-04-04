@@ -1,84 +1,197 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+const seoTitle = "Aviso Legal | Mindesk - Software de Gestión Clínica";
+const seoDescription =
+    "Información legal del sitio web de Mindesk: datos del titular, condiciones de uso, propiedad intelectual y jurisdicción aplicable. Proyecto en fase Beta con sede en Dos Hermanas, Sevilla.";
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://www.mindesk.es/",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Aviso Legal",
+            item: "https://www.mindesk.es/aviso-legal/",
+        },
+    ],
+};
 ---
 
-<Layout title="Aviso Legal | Mindesk">
-    
-    <section class="relative min-h-[calc(100vh-80px)] py-20 px-4 sm:px-6 flex items-center justify-center font-sans overflow-hidden z-10">
-        
-        <div class="absolute top-10 left-10 w-96 h-96 bg-[#10b981]/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
-        <div class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+<Layout title={seoTitle} description={seoDescription}>
+    <Fragment slot="head">
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    </Fragment>
 
-        <div class="relative w-full max-w-4xl bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_50px_rgba(0,0,0,0.05)] border border-white/80 z-10">
-            
-            <div class="border-b border-slate-200/60 pb-8 mb-10 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-wide uppercase mb-4 w-max border border-[#10b981]/20">
+    <section
+        class="relative min-h-[calc(100vh-80px)] py-20 px-4 sm:px-6 flex items-center justify-center font-sans overflow-hidden z-10"
+    >
+        <div
+            class="absolute top-10 left-10 w-96 h-96 bg-[#10b981]/10 blur-[120px] rounded-full pointer-events-none z-0"
+        >
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none z-0"
+        >
+        </div>
+
+        <div
+            class="relative w-full max-w-4xl bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_50px_rgba(0,0,0,0.05)] border border-white/80 z-10"
+        >
+            <div
+                class="border-b border-slate-200/60 pb-8 mb-10 text-center md:text-left"
+            >
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10b981]/10 text-[#10b981] text-xs font-bold tracking-wide uppercase mb-4 w-max border border-[#10b981]/20"
+                >
                     Documento Legal
                 </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2D3748] tracking-tight mb-4">Aviso Legal.</h1>
-                <p class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest">Última actualización: Marzo 2026</p>
+                <h1
+                    class="text-4xl md:text-5xl font-extrabold text-[#2D3748] tracking-tight mb-4"
+                >
+                    Aviso Legal.
+                </h1>
+                <p
+                    class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest"
+                >
+                    Última actualización: Marzo 2026
+                </p>
             </div>
 
             <div class="space-y-10 text-slate-600 font-medium leading-relaxed">
-                
                 <section>
-                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
-                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">1</span> 
+                    <h2
+                        class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+                    >
+                        <span
+                            class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+                            >1</span
+                        >
                         Información del Titular
                     </h2>
                     <p class="mb-5">
-                        En cumplimiento con el deber de información recogido en la normativa vigente, se informa que el presente sitio web es un proyecto tecnológico en fase de desarrollo (Beta) y portfolio profesional, no constituyendo en el momento presente una sociedad mercantil activa.
+                        En cumplimiento con el deber de información recogido en
+                        la normativa vigente, se informa que el presente sitio
+                        web es un proyecto tecnológico en fase de desarrollo
+                        (Beta) y portfolio profesional, no constituyendo en el
+                        momento presente una sociedad mercantil activa.
                     </p>
-                    <div class="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col gap-2">
-                        <p><strong class="text-[#2D3748]">Titular / Promotor:</strong> Carlos González Fernández</p>
-                        <p><strong class="text-[#2D3748]">Ubicación a efectos de contacto:</strong> Dos Hermanas, Sevilla (España)</p>
-                        <p><strong class="text-[#2D3748]">Email de contacto:</strong> <a href="mailto:info@mindesk.es" class="text-[#10b981] hover:underline transition-all">info@mindesk.es</a></p>
-                        <p><strong class="text-[#2D3748]">Actividad:</strong> Desarrollo de software de gestión clínica (Fase Beta)</p>
+                    <div
+                        class="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white shadow-sm flex flex-col gap-2"
+                    >
+                        <p>
+                            <strong class="text-[#2D3748]"
+                                >Titular / Promotor:</strong
+                            > Carlos González Fernández
+                        </p>
+                        <p>
+                            <strong class="text-[#2D3748]"
+                                >Ubicación a efectos de contacto:</strong
+                            > Dos Hermanas, Sevilla (España)
+                        </p>
+                        <p>
+                            <strong class="text-[#2D3748]"
+                                >Email de contacto:</strong
+                            >
+                            <a
+                                href="mailto:info@mindesk.es"
+                                class="text-[#10b981] hover:underline transition-all"
+                                >info@mindesk.es</a>
+                        </p>
+                        <p>
+                            <strong class="text-[#2D3748]">Actividad:</strong> Desarrollo
+                            de software de gestión clínica (Fase Beta)
+                        </p>
                     </div>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
-                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">2</span> 
+                    <h2
+                        class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+                    >
+                        <span
+                            class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+                            >2</span
+                        >
                         Uso del Sitio Web
                     </h2>
                     <p>
-                        El acceso a este sitio web es voluntario y atribuye la condición de USUARIO. El usuario se compromete a hacer un uso adecuado y lícito de los contenidos y servicios que se ofrecen, y a no emplearlos para incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.
+                        El acceso a este sitio web es voluntario y atribuye la
+                        condición de USUARIO. El usuario se compromete a hacer
+                        un uso adecuado y lícito de los contenidos y servicios
+                        que se ofrecen, y a no emplearlos para incurrir en
+                        actividades ilícitas, ilegales o contrarias a la buena
+                        fe y al orden público.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
-                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">3</span> 
+                    <h2
+                        class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+                    >
+                        <span
+                            class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+                            >3</span
+                        >
                         Propiedad Intelectual e Industrial
                     </h2>
                     <p>
-                        El código fuente, los diseños gráficos, la interfaz, las imágenes, el software y los textos contenidos en esta web son propiedad exclusiva de Carlos González Fernández. Queda estrictamente prohibida su reproducción, distribución, comunicación pública y transformación, total o parcial, sin la autorización expresa del titular.
+                        El código fuente, los diseños gráficos, la interfaz, las
+                        imágenes, el software y los textos contenidos en esta
+                        web son propiedad exclusiva de Carlos González
+                        Fernández. Queda estrictamente prohibida su
+                        reproducción, distribución, comunicación pública y
+                        transformación, total o parcial, sin la autorización
+                        expresa del titular.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
-                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">4</span> 
+                    <h2
+                        class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+                    >
+                        <span
+                            class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+                            >4</span
+                        >
                         Exclusión de Responsabilidad
                     </h2>
                     <p>
-                        El titular no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos, a pesar de haber adoptado las medidas tecnológicas necesarias para evitarlo.
+                        El titular no se hace responsable, en ningún caso, de
+                        los daños y perjuicios de cualquier naturaleza que
+                        pudieran ocasionar errores u omisiones en los
+                        contenidos, falta de disponibilidad del portal o la
+                        transmisión de virus o programas maliciosos, a pesar de
+                        haber adoptado las medidas tecnológicas necesarias para
+                        evitarlo.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3">
-                        <span class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm">5</span> 
+                    <h2
+                        class="text-2xl font-extrabold text-[#2D3748] tracking-tight mb-4 flex items-center gap-3"
+                    >
+                        <span
+                            class="text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-lg text-sm"
+                            >5</span
+                        >
                         Legislación y Jurisdicción
                     </h2>
                     <p>
-                        La relación entre el titular de la web y el usuario se regirá por la normativa española vigente. Cualquier controversia que pudiera derivarse del acceso o uso de este sitio web se someterá a los Juzgados y Tribunales de la ciudad de <strong>Sevilla</strong>.
+                        La relación entre el titular de la web y el usuario se
+                        regirá por la normativa española vigente. Cualquier
+                        controversia que pudiera derivarse del acceso o uso de
+                        este sitio web se someterá a los Juzgados y Tribunales
+                        de la ciudad de <strong>Sevilla</strong>.
                     </p>
                 </section>
-
             </div>
         </div>
     </section>
-
 </Layout>
