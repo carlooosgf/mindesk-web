@@ -1,53 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const seoTitle = "Solicitar Acceso Beta | Contacto Mindesk - Gestión Clínica";
-const seoDescription =
-  "Solicita acceso al programa Beta de Mindesk, software de gestión clínica. Disponible para gabinetes de psicología, logopedia y pedagogía en Dos Hermanas, Sevilla. Acceso gratuito y sin compromiso.";
-
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Contacto y Admisiones - Mindesk",
-    description: seoDescription,
-    url: "https://www.mindesk.es/contacto/",
-    mainEntity: {
-      "@type": "Organization",
-      name: "Mindesk",
-      email: "info@mindesk.es",
-      url: "https://www.mindesk.es",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Inicio",
-        item: "https://www.mindesk.es/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Contacto",
-        item: "https://www.mindesk.es/contacto/",
-      },
-    ],
-  },
-];
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
-  <Fragment slot="head">
-    {
-      jsonLd.map((schema) => (
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-      ))
-    }
-  </Fragment>
+<Layout title="Contacto y Admisiones | Mindesk">
   <section
     class="min-h-[calc(100vh-80px)] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden z-10"
   >
@@ -287,7 +242,7 @@ const jsonLd = [
             if (Object.prototype.hasOwnProperty.call(data, "errors")) {
               // @ts-ignore
               status.innerText = data["errors"]
-                .map((error: { [x: string]: any }) => error["message"])
+                .map((error: { [x: string]: any; }) => error["message"])
                 .join(", ");
             } else {
               status.innerText = "Hubo un problema. Inténtalo de nuevo.";
